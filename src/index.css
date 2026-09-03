@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-magenta: #FE007A;
+  --color-brand-purple: #4705ED;
+  --color-brand-teal: #00E19B;
+  --color-brand-amber: #FFB600;
+  --color-brand-navy: #1C1C42;
+  --color-brand-light-bg: #FAFAFE;
+  --color-brand-dark-bg: #0D0C22;
+  --color-brand-dark-card: #151433;
+  --color-brand-dark-border: #232252;
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Manrope', sans-serif;
+  --font-nunito: 'Nunito Sans', sans-serif;
+}
+
+.font-nunito {
+  font-family: var(--font-nunito);
+}
+
+/* Glow effects */
+.glow-magenta {
+  box-shadow: 0 10px 30px -10px rgba(254, 0, 122, 0.4);
+}
+.glow-purple {
+  box-shadow: 0 10px 30px -10px rgba(71, 5, 237, 0.4);
+}
+.glow-teal {
+  box-shadow: 0 10px 30px -10px rgba(0, 225, 155, 0.35);
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 35s linear infinite;
+}
+
+.animate-float {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSubtle 4s ease-in-out 2s infinite;
+}
