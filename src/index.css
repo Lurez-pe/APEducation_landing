@@ -54,3 +54,31 @@
 .animate-float-delayed {
   animation: floatSubtle 4s ease-in-out 2s infinite;
 }
+
+.neu-surface {
+  background: #FAFAFE;
+  box-shadow: 12px 12px 24px rgba(28, 28, 66, 0.10), -10px -10px 22px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.dark .neu-surface {
+  background: #151433;
+  box-shadow: 10px 10px 22px rgba(0, 0, 0, 0.28), -8px -8px 18px rgba(35, 34, 82, 0.35);
+  border-color: rgba(35, 34, 82, 0.8);
+}
+
+.neu-control {
+  box-shadow: 5px 5px 10px rgba(28, 28, 66, 0.08), -5px -5px 10px rgba(255, 255, 255, 0.9);
+}
+
+.dark .neu-control {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -4px -4px 9px rgba(35, 34, 82, 0.28);
+}
+
+.neu-inset {
+  box-shadow: inset 4px 4px 8px rgba(28, 28, 66, 0.10), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.dark .neu-inset {
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.25), inset -4px -4px 8px rgba(35, 34, 82, 0.25);
+}

@@ -10,6 +10,7 @@ import { Manifesto } from './components/Manifesto';
 import { Pillars } from './components/Pillars';
 import { Programs } from './components/Programs';
 import { Methodology } from './components/Methodology';
+import { LearningQuest } from './components/LearningQuest';
 import { FormatSection } from './components/FormatSection';
 import { Experiences } from './components/Experiences';
 import { Audiences } from './components/Audiences';
@@ -23,13 +24,13 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
   const [targetProgramForContact, setTargetProgramForContact] = useState<string>('Matemática Comprensiva');
 
   useEffect(() => {
-    // Check saved theme preference, default to light mode as requested in system specs
+    // Respect the saved choice, while starting new visits in dark mode.
     const saved = localStorage.getItem('ap_theme');
-    if (saved === 'dark') {
+    if (saved !== 'light') {
       setDarkMode(true);
       document.documentElement.classList.add('dark');
     } else {
@@ -82,7 +83,10 @@ export default function App() {
         {/* 6. Metodología STEM (5 fases interactivas) */}
         <Methodology />
 
-        {/* 7. Clases Personalizadas & Formato */}
+        {/* 7. Progreso y misiones de aprendizaje */}
+        <LearningQuest />
+
+        {/* 8. Clases Personalizadas & Formato */}
         <FormatSection />
 
         {/* 8. Experiencias y Talleres Especiales */}
