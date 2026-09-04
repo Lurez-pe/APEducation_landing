@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+section[id] {
+  scroll-margin-top: 8rem;
+}
+
 @theme {
   --color-brand-magenta: #FE007A;
   --color-brand-purple: #4705ED;
