@@ -117,7 +117,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
               </a>
 
               <a
-                href="https://instagram.com/ap.education20"
+                href="https://www.instagram.com/academiaapeducation/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#4705ED] transition-all group"
@@ -130,7 +130,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
                     Síguenos en Instagram
                   </div>
                   <div className="font-heading font-bold text-base text-[#1C1C42] dark:text-white group-hover:text-[#4705ED] transition-colors">
-                    @ap.education20
+                    @academiaapeducation
                   </div>
                 </div>
               </a>

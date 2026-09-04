@@ -85,12 +85,12 @@ export const Footer: React.FC = () => {
               <li className="flex items-center gap-3">
                 <Camera className="w-4 h-4 text-[#FFB600] flex-shrink-0" />
                 <a
-                  href="https://instagram.com/ap.education20"
+                  href="https://www.instagram.com/academiaapeducation/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  @ap.education20
+                  @academiaapeducation
                 </a>
               </li>
               <li className="flex items-center gap-3">

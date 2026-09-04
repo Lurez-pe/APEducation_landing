@@ -25,6 +25,7 @@ import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [activeZone, setActiveZone] = useState<string>('inicio');
   const [targetProgramForContact, setTargetProgramForContact] = useState<string>('Matemática Comprensiva');
 
   useEffect(() => {
@@ -37,6 +38,29 @@ export default function App() {
       setDarkMode(false);
       document.documentElement.classList.remove('dark');
     }
+  }, []);
+
+  useEffect(() => {
+    const sections = ['que-es', 'metodologia', 'testimonios', 'contacto'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveZone(visibleSection.target.id);
+        }
+      },
+      { rootMargin: '-28% 0px -48% 0px', threshold: [0.1, 0.35, 0.6] }
+    );
+
+    sections.forEach((id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleToggleTheme = () => {
@@ -62,7 +86,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFE] text-[#1C1C42] dark:bg-[#0D0C22] dark:text-[#EAEAFE] font-sans antialiased selection:bg-[#FE007A] selection:text-white transition-colors duration-300">
+    <div className={`app-shell zone-${activeZone} min-h-screen bg-[#FAFAFE] text-[#1C1C42] dark:bg-[#0D0C22] dark:text-[#EAEAFE] font-sans antialiased selection:bg-[#FE007A] selection:text-white transition-colors duration-700`}>
       {/* 1. Navbar */}
       <Navbar darkMode={darkMode} onToggleTheme={handleToggleTheme} />
 

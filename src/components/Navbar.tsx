@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Moon, Sun, MessageCircle, Menu, X } from 'lucide-react';
+import { Rocket, Moon, Sun, MessageCircle } from 'lucide-react';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -8,7 +8,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
           : 'bg-white/80 dark:bg-[#0D0C22]/85 backdrop-blur-sm border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group focus:outline-none" id="brand-logo">
           <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
@@ -55,18 +54,6 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold" id="desktop-nav">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-gray-600 dark:text-gray-300 hover:text-[#FE007A] dark:hover:text-[#FE007A] transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-        </nav>
-
         {/* Right Action Items */}
         <div className="flex items-center gap-3">
           {/* Theme Toggle Button */}
@@ -91,48 +78,26 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
             <span>+51 951 847 956</span>
           </a>
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            id="mobile-menu-btn"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Abrir menú móvil"
-            className="lg:hidden w-10 h-10 rounded-xl bg-gray-100 dark:bg-[#151433] flex items-center justify-center text-[#1C1C42] dark:text-white focus:outline-none"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div
-          id="mobile-menu-drawer"
-          className="lg:hidden px-6 pt-3 pb-6 bg-white dark:bg-[#151433] border-b border-gray-200 dark:border-[#232252] animate-in slide-in-from-top duration-200"
-        >
-          <div className="flex flex-col gap-3 font-semibold text-base py-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 dark:text-gray-200 hover:text-[#FE007A] py-1 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+      <nav
+        id="sub-header-nav"
+        className="border-t border-gray-100 dark:border-[#232252] bg-white/90 dark:bg-[#0D0C22]/90 backdrop-blur-sm"
+        aria-label="Navegación principal"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs sm:text-sm font-semibold">
+          {navLinks.map((link) => (
             <a
-              href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20deseo%20m%C3%A1s%20informaci%C3%B3n"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-3 inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#FE007A] text-white font-bold text-sm shadow-md"
+              key={link.name}
+              href={link.href}
+              className="py-1 text-gray-600 dark:text-gray-300 hover:text-[#FE007A] dark:hover:text-[#FE007A] transition-colors whitespace-nowrap"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chatear en WhatsApp (+51 951 847 956)</span>
+              {link.name}
             </a>
-          </div>
+          ))}
         </div>
-      )}
+      </nav>
     </header>
   );
 };
