@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { GraduationCap, Brain, Code, Lightbulb, Heart, Headset, ChevronLeft, ChevronRight } from 'lucide-react';
 
+const FOCUS_INTERVAL_MS = 720;
+const TRANSITION_DURATION_MS = 1400;
+
 export const Pillars: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const resumeTimer = useRef<number | null>(null);
+  const pauseUntil = useRef(0);
+  const transitionTimer = useRef<number | null>(null);
 
   const pillars = [
     {
@@ -76,26 +79,29 @@ export const Pillars: React.FC = () => {
   ];
 
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = window.setInterval(() => {
+      if (Date.now() < pauseUntil.current) return;
+      if (transitionTimer.current) return;
       setActiveIndex((current) => (current + 1) % pillars.length);
-    }, 3800);
+      transitionTimer.current = window.setTimeout(() => {
+        transitionTimer.current = null;
+      }, TRANSITION_DURATION_MS);
+    }, FOCUS_INTERVAL_MS);
 
-    return () => window.clearInterval(interval);
-  }, [isPaused, pillars.length]);
+    return () => {
+      window.clearInterval(interval);
+      if (transitionTimer.current) window.clearTimeout(transitionTimer.current);
+    };
+  }, [pillars.length]);
 
   const moveCarousel = (direction: number) => {
+    pauseForFiveSeconds();
     setActiveIndex((current) => (current + direction + pillars.length) % pillars.length);
   };
 
   const pauseForFiveSeconds = () => {
-    if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
-    setIsPaused(true);
-    resumeTimer.current = window.setTimeout(() => {
-      setIsPaused(false);
-      resumeTimer.current = null;
-    }, 5000);
+    if (Date.now() < pauseUntil.current) return;
+    pauseUntil.current = Date.now() + 3800;
   };
 
   return (
@@ -114,7 +120,7 @@ export const Pillars: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative px-10 sm:px-14">
+        <div className="relative -mx-4 sm:-mx-6 lg:-mx-10 px-10 sm:px-14">
           <button
             type="button"
             onClick={() => moveCarousel(-1)}
@@ -125,7 +131,7 @@ export const Pillars: React.FC = () => {
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          <div className="relative min-h-[390px] sm:min-h-[370px]" onMouseEnter={pauseForFiveSeconds}>
+          <div className="relative min-h-[390px] sm:min-h-[370px]">
           {pillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
             const rawOffset = index - activeIndex;
@@ -136,22 +142,31 @@ export const Pillars: React.FC = () => {
               : rawOffset;
             const distance = Math.abs(offset);
             const isActive = offset === 0;
+            const isHidden = distance === 3;
+            const isLevelTwo = distance === 1;
             return (
               <div
                 key={pillar.id}
                 id={pillar.id}
-                className="absolute left-1/2 top-1/2 w-[min(360px,72vw)] px-1 transition-all duration-[350ms] ease-out"
+                className={`absolute left-1/2 top-1/2 w-[min(380px,76vw)] px-1 transition-all duration-[1400ms] ease-in-out ${isHidden ? 'pointer-events-none' : ''}`}
                 style={{
-                  transform: `translate(calc(-50% + ${offset * 24}%), -50%) scale(${isActive ? 1 : Math.max(0.62, 0.9 - distance * 0.07)})`,
-                  opacity: isActive ? 1 : Math.max(0.22, 0.64 - distance * 0.1),
-                  zIndex: isActive ? 20 : 15 - distance,
+                  transform: `translate(calc(-50% + ${offset * 10}vw), -50%) scale(${isActive ? 1.2 : isLevelTwo ? 1 : 0.8})`,
+                  filter: isActive ? 'none' : isLevelTwo ? 'blur(1.5px)' : 'blur(3px)',
+                  opacity: isHidden ? 0 : isActive ? 1 : isLevelTwo ? 0.62 : 0.38,
+                  zIndex: isActive ? 20 : isLevelTwo ? 18 : isHidden ? 0 : 15,
                 }}
               >
                 <button
                   type="button"
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => {
+                    setActiveIndex(index);
+                    pauseForFiveSeconds();
+                  }}
                   aria-label={`Seleccionar ${pillar.title}`}
-                  className={`w-full min-h-[300px] sm:min-h-[315px] text-left bg-white dark:bg-[#151433] p-7 sm:p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${pillar.borderHover} transition-shadow duration-300 group cursor-pointer`}
+                  aria-hidden={isHidden}
+                  tabIndex={isHidden ? -1 : 0}
+                  aria-current={isActive ? 'true' : undefined}
+                  className={`w-full min-h-[300px] sm:min-h-[315px] text-left bg-white dark:bg-[#151433] p-7 sm:p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${isActive ? 'ring-2 ring-[#FE007A]/70 shadow-[0_22px_45px_rgba(28,28,66,0.24)]' : ''} ${pillar.borderHover} transition-shadow duration-300 group cursor-pointer`}
                 >
                   <div className={`w-14 h-14 rounded-2xl ${pillar.accentBg} ${pillar.accentText} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <IconComponent className="w-7 h-7" />
@@ -183,7 +198,10 @@ export const Pillars: React.FC = () => {
               <button
                 key={pillar.id}
                 type="button"
-                onClick={() => setActiveIndex(index)}
+                onClick={() => {
+                  setActiveIndex(index);
+                  pauseForFiveSeconds();
+                }}
                 aria-label={`Ver pilar ${index + 1}`}
                 className={`h-2 rounded-full transition-all cursor-pointer ${
                   activeIndex === index ? 'w-8 bg-[#FE007A]' : 'w-2 bg-gray-300 dark:bg-[#232252] hover:bg-[#4705ED]'
