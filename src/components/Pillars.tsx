@@ -1,7 +1,11 @@
-import React from 'react';
-import { GraduationCap, Brain, Code, Lightbulb, Heart, Headset } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { GraduationCap, Brain, Code, Lightbulb, Heart, Headset, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export const Pillars: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const resumeTimer = useRef<number | null>(null);
+
   const pillars = [
     {
       id: 'pilar-1',
@@ -71,6 +75,29 @@ export const Pillars: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % pillars.length);
+    }, 3800);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, pillars.length]);
+
+  const moveCarousel = (direction: number) => {
+    setActiveIndex((current) => (current + direction + pillars.length) % pillars.length);
+  };
+
+  const pauseForFiveSeconds = () => {
+    if (resumeTimer.current) window.clearTimeout(resumeTimer.current);
+    setIsPaused(true);
+    resumeTimer.current = window.setTimeout(() => {
+      setIsPaused(false);
+      resumeTimer.current = null;
+    }, 5000);
+  };
+
   return (
     <section id="por-que-ap" className="py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,29 +114,83 @@ export const Pillars: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {pillars.map((pillar) => {
+        <div className="relative px-10 sm:px-14">
+          <button
+            type="button"
+            onClick={() => moveCarousel(-1)}
+            title="Pilar anterior"
+            aria-label="Ver pilar anterior"
+            className="absolute left-0 sm:left-4 top-1/2 z-30 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#151433] border border-gray-200 dark:border-[#232252] text-[#4705ED] dark:text-[#00E19B] shadow-lg hover:scale-105 hover:border-[#FE007A] transition-all cursor-pointer flex items-center justify-center"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <div className="relative min-h-[390px] sm:min-h-[370px]" onMouseEnter={pauseForFiveSeconds}>
+          {pillars.map((pillar, index) => {
             const IconComponent = pillar.icon;
+            const rawOffset = index - activeIndex;
+            const offset = rawOffset > pillars.length / 2
+              ? rawOffset - pillars.length
+              : rawOffset < -pillars.length / 2
+              ? rawOffset + pillars.length
+              : rawOffset;
+            const distance = Math.abs(offset);
+            const isActive = offset === 0;
             return (
               <div
                 key={pillar.id}
                 id={pillar.id}
-                className={`bg-white dark:bg-[#151433] p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${pillar.borderHover} transition-all duration-300 group cursor-default`}
+                className="absolute left-1/2 top-1/2 w-[min(360px,72vw)] px-1 transition-all duration-[350ms] ease-out"
+                style={{
+                  transform: `translate(calc(-50% + ${offset * 24}%), -50%) scale(${isActive ? 1 : Math.max(0.62, 0.9 - distance * 0.07)})`,
+                  opacity: isActive ? 1 : Math.max(0.22, 0.64 - distance * 0.1),
+                  zIndex: isActive ? 20 : 15 - distance,
+                }}
               >
-                <div
-                  className={`w-14 h-14 rounded-2xl ${pillar.accentBg} ${pillar.accentText} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}
+                <button
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Seleccionar ${pillar.title}`}
+                  className={`w-full min-h-[300px] sm:min-h-[315px] text-left bg-white dark:bg-[#151433] p-7 sm:p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${pillar.borderHover} transition-shadow duration-300 group cursor-pointer`}
                 >
-                  <IconComponent className="w-7 h-7" />
-                </div>
-                <h3 className="font-heading font-bold text-xl text-[#1C1C42] dark:text-white mb-3">
-                  {pillar.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {pillar.description}
-                </p>
+                  <div className={`w-14 h-14 rounded-2xl ${pillar.accentBg} ${pillar.accentText} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <IconComponent className="w-7 h-7" />
+                  </div>
+                  <h3 className="font-heading font-bold text-xl text-[#1C1C42] dark:text-white mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                </button>
               </div>
             );
           })}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => moveCarousel(1)}
+            title="Siguiente pilar"
+            aria-label="Ver siguiente pilar"
+            className="absolute right-0 sm:right-4 top-1/2 z-30 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#151433] border border-gray-200 dark:border-[#232252] text-[#4705ED] dark:text-[#00E19B] shadow-lg hover:scale-105 hover:border-[#FE007A] transition-all cursor-pointer flex items-center justify-center"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-6" aria-label="Indicadores de pilares">
+            {pillars.map((pillar, index) => (
+              <button
+                key={pillar.id}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Ver pilar ${index + 1}`}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  activeIndex === index ? 'w-8 bg-[#FE007A]' : 'w-2 bg-gray-300 dark:bg-[#232252] hover:bg-[#4705ED]'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

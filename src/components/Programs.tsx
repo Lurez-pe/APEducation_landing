@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calculator, Mic, Box, Terminal, Rocket, Check, ArrowRight } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Calculator, Mic, Box, Terminal, Rocket, Check, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Program } from '../types';
 import { PROGRAMS } from '../data';
 import { ProgramModal } from './ProgramModal';
@@ -11,6 +11,9 @@ interface ProgramsProps {
 export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact }) => {
   const [selectedProgram, setSelectedProgram] = useState<Program | null>(null);
   const [filter, setFilter] = useState<'all' | 'math' | 'comm' | 'tech'>('all');
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  const [carouselPaused, setCarouselPaused] = useState(false);
+  const [visibleCards, setVisibleCards] = useState(1);
 
   const filterPrograms = () => {
     if (filter === 'math') return PROGRAMS.filter((p) => p.id === 'matematica');
@@ -37,6 +40,36 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
 
   const regularPrograms = filterPrograms().filter((p) => p.id !== 'ap-lab');
   const showLab = filter === 'all' || filter === 'tech';
+
+  useEffect(() => {
+    setCarouselIndex(0);
+  }, [filter]);
+
+  useEffect(() => {
+    const updateVisibleCards = () => setVisibleCards(window.innerWidth >= 640 ? 2 : 1);
+    updateVisibleCards();
+    window.addEventListener('resize', updateVisibleCards);
+    return () => window.removeEventListener('resize', updateVisibleCards);
+  }, []);
+
+  const maxCarouselIndex = Math.max(regularPrograms.length - visibleCards, 0);
+
+  useEffect(() => {
+    if (carouselPaused || regularPrograms.length < 2) return;
+
+    const interval = window.setInterval(() => {
+      setCarouselIndex((current) => (current >= maxCarouselIndex ? 0 : current + 1));
+    }, 7000);
+
+    return () => window.clearInterval(interval);
+  }, [carouselPaused, maxCarouselIndex, regularPrograms.length]);
+
+  const moveCarousel = (direction: number) => {
+    setCarouselIndex((current) => {
+      const nextIndex = current + direction;
+      return nextIndex < 0 ? maxCarouselIndex : nextIndex > maxCarouselIndex ? 0 : nextIndex;
+    });
+  };
 
   return (
     <section
@@ -103,9 +136,28 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
           </button>
         </div>
 
-        {/* Regular Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8">
-          {regularPrograms.map((program) => {
+        {/* Regular Programs Carousel */}
+        <div
+          className="relative mb-8 px-10 sm:px-14"
+          onMouseEnter={() => setCarouselPaused(true)}
+          onMouseLeave={() => setCarouselPaused(false)}
+        >
+          <button
+            type="button"
+            onClick={() => moveCarousel(-1)}
+            title="Programa anterior"
+            aria-label="Ver programa anterior"
+            className="absolute left-0 top-1/2 z-10 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0D0C22] border border-gray-200 dark:border-[#232252] text-[#4705ED] dark:text-[#00E19B] shadow-lg hover:scale-105 hover:border-[#FE007A] transition-all cursor-pointer flex items-center justify-center"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <div className="overflow-hidden rounded-3xl">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${carouselIndex * (100 / visibleCards)}%)` }}
+            >
+              {regularPrograms.map((program) => {
             const isMagenta = program.color === 'magenta';
             const isPurple = program.color === 'purple';
             const isTeal = program.color === 'teal';
@@ -143,12 +195,12 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
               ? 'group-hover:bg-[#00E19B] group-hover:text-[#1C1C42]'
               : 'group-hover:bg-[#FFB600] group-hover:text-[#1C1C42]';
 
-            return (
-              <div
-                key={program.id}
-                id={`card-program-${program.id}`}
-                className={`rounded-3xl p-8 bg-[#FAFAFE] dark:bg-[#0D0C22] border border-gray-200/80 dark:border-[#232252] flex flex-col justify-between ${hoverBorder} hover:shadow-xl transition-all duration-300 group`}
-              >
+                return (
+                  <div key={program.id} className="min-w-full sm:min-w-[50%] px-0.5">
+                    <div
+                      id={`card-program-${program.id}`}
+                      className={`h-full rounded-3xl p-8 bg-[#FAFAFE] dark:bg-[#0D0C22] border border-gray-200/80 dark:border-[#232252] flex flex-col justify-between ${hoverBorder} hover:shadow-xl transition-all duration-300 group`}
+                    >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-12 h-12 rounded-2xl ${iconBg} flex items-center justify-center`}>
@@ -192,9 +244,36 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
                     Inscribirme
                   </button>
                 </div>
-              </div>
-            );
-          })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => moveCarousel(1)}
+            title="Siguiente programa"
+            aria-label="Ver siguiente programa"
+            className="absolute right-0 top-1/2 z-10 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white dark:bg-[#0D0C22] border border-gray-200 dark:border-[#232252] text-[#4705ED] dark:text-[#00E19B] shadow-lg hover:scale-105 hover:border-[#FE007A] transition-all cursor-pointer flex items-center justify-center"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <div className="flex justify-center gap-2 mt-5" aria-label="Indicadores de programas">
+            {Array.from({ length: maxCarouselIndex + 1 }, (_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setCarouselIndex(index)}
+                aria-label={`Ver grupo de programas ${index + 1}`}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  carouselIndex === index ? 'w-8 bg-[#FE007A]' : 'w-2 bg-gray-300 dark:bg-[#232252] hover:bg-[#4705ED]'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Featured AP LAB Program Card */}
