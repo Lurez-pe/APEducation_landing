@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
 
           {/* Right Visual Composition (Brand Icons Orbit) */}
           <div className="lg:col-span-5 flex justify-center relative select-none">
-            <div className="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] flex items-center justify-center">
+            <div className="relative h-[340px] w-[min(340px,calc(100vw-2rem))] sm:h-[420px] sm:w-[420px] flex items-center justify-center">
               {/* Concentric Dashed Rings */}
               <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#4705ED]/30 dark:border-[#4705ED]/40 animate-spin-slow" />
               <div className="absolute inset-8 rounded-full border border-dashed border-[#FE007A]/30 dark:border-[#FE007A]/40" />

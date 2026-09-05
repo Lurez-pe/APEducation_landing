@@ -37,16 +37,16 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
           : 'bg-white/80 dark:bg-[#0D0C22]/85 backdrop-blur-sm border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto min-w-0 px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group focus:outline-none" id="brand-logo">
+        <a href="#" className="flex min-w-0 items-center gap-3 group focus:outline-none" id="brand-logo">
           <img
             src="/assets/brand/ap-education-logo.png"
             alt="AP Education"
             className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
           />
-          <div className="flex flex-col">
-            <span className="font-heading font-extrabold text-xl tracking-tight text-[#1C1C42] dark:text-white leading-none">
+          <div className="min-w-0 flex flex-col">
+            <span className="font-heading font-extrabold text-xl tracking-tight text-[#1C1C42] dark:text-white leading-none whitespace-nowrap">
               AP <span className="text-[#FE007A]">EDUCATION</span>
             </span>
             <span className="text-[10px] font-bold tracking-widest text-[#4705ED] dark:text-[#00E19B] uppercase mt-1">
@@ -57,7 +57,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
 
         {/* Desktop Navigation */}
         {/* Right Action Items */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-shrink-0 items-center gap-3">
           {/* Theme Toggle Button */}
           <button
             id="theme-toggle-btn"
