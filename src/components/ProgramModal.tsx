@@ -31,16 +31,16 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({
   return (
     <div
       id="program-modal-backdrop"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-sm overflow-hidden animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
         id="program-modal-content"
-        className="relative w-full max-w-3xl bg-white dark:bg-[#151433] rounded-3xl border border-gray-100 dark:border-[#232252] shadow-2xl overflow-hidden my-8"
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-2xl dark:border-[#232252] dark:bg-[#151433] sm:max-h-[calc(100dvh-2rem)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="relative p-6 sm:p-8 bg-gradient-to-r from-[#1C1C42] to-[#4705ED] text-white">
+        <div className="relative flex-shrink-0 bg-gradient-to-r from-[#1C1C42] to-[#4705ED] p-5 text-white sm:p-8">
           <button
             id="close-program-modal-btn"
             onClick={onClose}
@@ -59,7 +59,7 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-8 max-h-[65vh] overflow-y-auto space-y-6">
+        <div className="min-h-0 flex-1 space-y-6 overflow-y-auto p-5 sm:p-8">
           {/* Quick specs chips */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-[#FAFAFE] dark:bg-[#0D0C22] border border-gray-100 dark:border-[#232252] text-xs font-semibold text-gray-700 dark:text-gray-300">
             <div className="flex items-center gap-2">
@@ -126,7 +126,7 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({
         </div>
 
         {/* Modal Footer / Actions */}
-        <div className="p-6 bg-gray-50 dark:bg-[#0D0C22] border-t border-gray-100 dark:border-[#232252] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-shrink-0 flex-col items-center justify-between gap-4 border-t border-gray-100 bg-gray-50 p-4 dark:border-[#232252] dark:bg-[#0D0C22] sm:flex-row sm:p-6">
           <a
             href={`https://wa.me/51951847956?text=${whatsappMessage}`}
             target="_blank"

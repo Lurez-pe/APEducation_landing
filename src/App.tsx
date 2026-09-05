@@ -24,14 +24,14 @@ import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(false);
   const [activeZone, setActiveZone] = useState<string>('inicio');
   const [targetProgramForContact, setTargetProgramForContact] = useState<string>('Matemática Comprensiva');
 
   useEffect(() => {
-    // Respect the saved choice, while starting new visits in dark mode.
+    // Respect the saved choice, while starting new visits in light mode.
     const saved = localStorage.getItem('ap_theme');
-    if (saved !== 'light') {
+    if (saved === 'dark') {
       setDarkMode(true);
       document.documentElement.classList.add('dark');
     } else {
