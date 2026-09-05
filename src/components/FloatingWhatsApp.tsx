@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MessageCircle } from 'lucide-react';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [hovered, setHovered] = useState(false);
@@ -13,7 +12,7 @@ export const FloatingWhatsApp: React.FC = () => {
     >
       {/* Tooltip */}
       <div
-        className={`hidden md:block mr-3 bg-[#1C1C42] text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-xl border border-white/10 transition-all duration-200 pointer-events-none whitespace-nowrap ${
+          className={`hidden md:block mr-3 bg-[#61CE70] text-white text-xs font-bold py-2.5 px-4 rounded-xl shadow-xl border border-white/10 transition-all duration-200 pointer-events-none whitespace-nowrap ${
           hovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
         }`}
       >
@@ -26,10 +25,14 @@ export const FloatingWhatsApp: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp a AP Education"
-        className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all glow-purple relative"
+        className="w-[50px] h-[50px] rounded-full bg-transparent text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all glow-purple relative"
       >
-        <MessageCircle className="w-7 h-7 fill-current" />
-        <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#FE007A] rounded-full border-2 border-white dark:border-[#0D0C22] animate-pulse" />
+        <span className="absolute inset-0 rounded-full bg-white" aria-hidden="true" />
+        <img
+          src="/assets/brand/wpp_circle.png"
+          alt="WhatsApp"
+          className="relative z-10 w-[46px] h-[46px] rounded-full object-contain"
+        />
       </a>
     </div>
   );

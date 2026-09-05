@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Rocket, Moon, Sun, MessageCircle } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -40,14 +40,16 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group focus:outline-none" id="brand-logo">
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
-            <Rocket className="w-6 h-6 transform -rotate-45" />
-          </div>
+          <img
+            src="/assets/brand/ap-education-logo.png"
+            alt="AP Education"
+            className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
+          />
           <div className="flex flex-col">
             <span className="font-heading font-extrabold text-xl tracking-tight text-[#1C1C42] dark:text-white leading-none">
               AP <span className="text-[#FE007A]">EDUCATION</span>
             </span>
-            <span className="text-[10px] font-semibold tracking-widest text-[#4705ED] dark:text-[#00E19B] uppercase mt-1">
+            <span className="text-[10px] font-bold tracking-widest text-[#4705ED] dark:text-[#00E19B] uppercase mt-1">
               Ciencia • Tecnología • Futuro
             </span>
           </div>
@@ -72,10 +74,13 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
             href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20programas"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#4705ED] hover:bg-[#4705ED]/90 text-white font-semibold text-sm transition-all shadow-md shadow-[#4705ED]/20 hover:-translate-y-0.5"
+            className="hidden sm:inline-flex h-11 w-[136px] items-center justify-center rounded-xl bg-[#4705ED] px-2.5 py-1.5 transition-all shadow-md shadow-[#4705ED]/20 hover:-translate-y-0.5"
           >
-            <MessageCircle className="w-4 h-4 text-[#00E19B]" />
-            <span>+51 951 847 956</span>
+            <img
+              src="/assets/brand/wpp-horizontal.png"
+              alt="WhatsApp"
+              className="block max-h-full max-w-full object-contain"
+            />
           </a>
 
         </div>

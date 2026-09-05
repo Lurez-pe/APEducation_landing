@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MessageCircle, CheckCircle2, Users, Award, Rocket, Puzzle, GraduationCap, HandMetal, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Users, Award, Rocket, Puzzle, GraduationCap, HandMetal, Sparkles } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -54,8 +54,11 @@ export const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white dark:bg-[#151433] border border-gray-200 dark:border-[#232252] hover:border-[#4705ED] text-[#1C1C42] dark:text-white font-bold text-base shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2.5"
               >
-                <span className="w-3 h-3 rounded-full bg-[#00E19B]" />
-                <MessageCircle className="w-4 h-4 text-[#00E19B]" />
+                <img
+                  src="/assets/brand/wpp_cuadrado.png"
+                  alt="WhatsApp"
+                  className="w-5 h-5 object-contain"
+                />
                 <span>Chatear por WhatsApp</span>
               </a>
             </div>
@@ -86,12 +89,12 @@ export const Hero: React.FC = () => {
 
               {/* Center Core Hub */}
               <div className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1 shadow-2xl glow-magenta animate-float">
-                <div className="w-full h-full bg-white dark:bg-[#151433] rounded-[22px] p-4 flex flex-col items-center justify-center text-center">
-                  <span className="font-heading font-extrabold text-2xl sm:text-3xl text-[#FE007A]">AP</span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#4705ED] dark:text-[#00E19B]">
-                    Education
-                  </span>
-                  <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-1">Ecosistema STEAM</span>
+                <div className="w-full h-full bg-white dark:bg-[#151433] rounded-[22px] p-2 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/assets/brand/back2academy2026.png"
+                    alt="Back to Academy 2026"
+                    className="w-full h-full object-contain rounded-[16px]"
+                  />
                 </div>
               </div>
 

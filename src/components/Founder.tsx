@@ -12,9 +12,11 @@ export const Founder: React.FC = () => {
               <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#FE007A] to-[#4705ED] opacity-30 blur-xl pointer-events-none" />
               <div className="relative bg-white dark:bg-[#0D0C22] p-8 rounded-3xl border border-gray-200 dark:border-[#232252] text-center shadow-xl">
                 <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1.5 mb-5 shadow-md">
-                  <div className="w-full h-full rounded-full bg-[#FAFAFE] dark:bg-[#151433] flex items-center justify-center text-5xl select-none">
-                    👩‍🏫
-                  </div>
+                  <img
+                    src="/assets/brand/aza_linkedin.jpg"
+                    alt="Azahalia Puyen, fundadora de AP Education"
+                    className="w-full h-full rounded-full object-cover object-top"
+                  />
                 </div>
                 <h3 className="font-heading font-extrabold text-2xl text-[#1C1C42] dark:text-white">
                   Azahalia Puyen
