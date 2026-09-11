@@ -36,6 +36,8 @@ El sitio se publica en **GitHub Pages** automáticamente mediante el workflow
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) al hacer push a las ramas
 `main` o `nuevo-estilo`.
 
+**URL oficial:** https://apeducationlatam.com
+
 ## Contacto
 
 - WhatsApp: +51 951 847 956
