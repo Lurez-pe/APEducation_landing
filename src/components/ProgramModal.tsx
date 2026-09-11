@@ -36,26 +36,26 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({
     >
       <div
         id="program-modal-content"
-        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-2xl dark:border-[#232252] dark:bg-[#151433] sm:max-h-[calc(100dvh-2rem)]"
+        className="relative flex max-h-[calc(100dvh-1.5rem)] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xl dark:border-[#232252] dark:bg-[#151433] sm:max-h-[calc(100dvh-2rem)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="relative flex-shrink-0 bg-gradient-to-r from-[#1C1C42] to-[#4705ED] p-5 text-white sm:p-8">
+        <div className="relative flex-shrink-0 bg-gradient-to-r from-[#EDE6FB] via-[#FDEBF5] to-[#FDE3F0] p-5 sm:p-8 border-b border-[#4705ED]/10">
           <button
             id="close-program-modal-btn"
             onClick={onClose}
-            className="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors focus:outline-none"
+            className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#1C1C42]/10 hover:bg-[#1C1C42]/20 text-[#1C1C42] flex items-center justify-center transition-colors focus:outline-none"
             aria-label="Cerrar modal"
           >
             <X className="w-5 h-5" />
           </button>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[#00E19B] text-xs font-bold mb-3 uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1C1C42]/5 text-deep-teal text-xs font-bold mb-3 uppercase tracking-wider">
             <span>{program.tag}</span>
           </div>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl pr-10">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl pr-10 text-[#1C1C42]">
             {program.title}
           </h2>
-          <p className="text-gray-200 text-sm sm:text-base mt-2">{program.subtitle}</p>
+          <p className="text-gray-600 text-sm sm:text-base mt-2">{program.subtitle}</p>
         </div>
 
         {/* Modal Body */}
@@ -139,7 +139,7 @@ export const ProgramModal: React.FC<ProgramModalProps> = ({
 
           <button
             onClick={handleEnrollClick}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-sm glow-magenta transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-sm shadow-md transition-all"
           >
             <CheckCircle2 className="w-4 h-4" />
             <span>Reservar Plaza en Formulario</span>

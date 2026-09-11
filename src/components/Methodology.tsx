@@ -78,42 +78,42 @@ export const Methodology: React.FC = () => {
         </div>
 
         {/* Detailed Interactive Phase Spotlight */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#1C1C42] via-[#232252] to-[#0D0C22] text-white border border-white/10 shadow-xl">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#EDE6FB] via-[#FDEBF5] to-[#DBF7EC] text-[#1C1C42] border border-[#4705ED]/10 shadow-lg">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
               <div className="flex items-center gap-3 mb-3">
                 <span className="w-8 h-8 rounded-xl bg-[#FE007A] text-white font-heading font-extrabold text-sm flex items-center justify-center">
                   {activePhase.number}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00E19B]">
+                <span className="text-xs font-bold uppercase tracking-widest text-deep-teal">
                   Fase Activa: {activePhase.title}
                 </span>
               </div>
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-4 text-white">
+              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-4 text-[#1C1C42]">
                 {activePhase.title}: {activePhase.tag}
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4">
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
                 {activePhase.description}
               </p>
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div className="flex items-center gap-2 text-xs font-bold text-[#FFB600] uppercase tracking-wider mb-1">
+              <div className="p-4 rounded-2xl bg-white/70 border border-[#4705ED]/10">
+                <div className="flex items-center gap-2 text-xs font-bold text-deep-amber uppercase tracking-wider mb-1">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Ejemplo en el Aula AP Education:</span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-200 italic">
+                <p className="text-xs sm:text-sm text-gray-600 italic">
                   "{activePhase.example}"
                 </p>
               </div>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white/5 border border-white/10">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] text-white flex items-center justify-center mb-4 shadow-lg">
+            <div className="lg:col-span-4 flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white/70 border border-[#4705ED]/10">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] text-white flex items-center justify-center mb-4 shadow-md">
                 {getPhaseIcon(activePhase.iconName)}
               </div>
-              <div className="font-heading font-bold text-lg text-white">
+              <div className="font-heading font-bold text-lg text-[#1C1C42]">
                 Aprender Haciendo
               </div>
-              <div className="text-xs text-[#00E19B] mt-1 font-medium">
+              <div className="text-xs text-deep-teal mt-1 font-medium">
                 Sin memorización pasiva
               </div>
             </div>

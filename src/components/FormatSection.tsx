@@ -69,26 +69,26 @@ export const FormatSection: React.FC = () => {
 
           {/* Right: Golden quote card */}
           <div className="lg:col-span-6">
-            <div className="bg-gradient-to-br from-[#1C1C42] via-[#25255C] to-[#0D0C22] p-8 sm:p-10 rounded-3xl text-white shadow-2xl relative overflow-hidden border border-white/10">
-              <div className="text-[#FFB600] font-heading font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-[#EDE6FB] via-[#FDEBF5] to-[#DBF7EC] p-8 sm:p-10 rounded-3xl text-[#1C1C42] shadow-lg relative overflow-hidden border border-[#4705ED]/10">
+              <div className="text-deep-amber font-heading font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
                 <Award className="w-5 h-5" />
                 <span>Estándar de Calidad AP</span>
               </div>
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-6 leading-snug">
+              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-6 leading-snug text-[#1C1C42]">
                 "Aprender no debe ser una obligación pesada, sino la aventura más fascinante de la semana."
               </h3>
-              <p className="text-sm text-gray-300 mb-8 leading-relaxed">
+              <p className="text-sm text-gray-600 mb-8 leading-relaxed">
                 Nuestra plataforma y salones virtuales han sido concebidos para despertar la pasión auténtica por el
                 conocimiento práctico.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 border-t border-white/15 pt-6 text-sm">
+              <div className="grid grid-cols-2 gap-4 border-t border-[#4705ED]/10 pt-6 text-sm">
                 <div>
-                  <div className="font-bold text-[#00E19B] text-xl flex items-center gap-2">
+                  <div className="font-bold text-deep-teal text-xl flex items-center gap-2">
                     <Globe className="w-5 h-5" />
                     <span>100% Online</span>
                   </div>
-                  <div className="text-gray-300 text-xs mt-1">
+                  <div className="text-gray-500 text-xs mt-1">
                     Desde la comodidad y seguridad de casa con alcance internacional.
                   </div>
                 </div>
@@ -97,7 +97,7 @@ export const FormatSection: React.FC = () => {
                     <FileText className="w-5 h-5" />
                     <span>Material Digital</span>
                   </div>
-                  <div className="text-gray-300 text-xs mt-1">
+                  <div className="text-gray-500 text-xs mt-1">
                     Guías interactivas, simuladores, ejercicios y grabaciones de repaso.
                   </div>
                 </div>

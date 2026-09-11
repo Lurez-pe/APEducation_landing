@@ -11,9 +11,9 @@ export const Founder: React.FC = () => {
           {/* Photo / Profile Box */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-sm">
-              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#FE007A] to-[#4705ED] opacity-30 blur-xl pointer-events-none" />
-              <div className="relative bg-white dark:bg-[#0D0C22] p-8 rounded-3xl border border-gray-200 dark:border-[#232252] text-center shadow-xl">
-                <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1.5 mb-5 shadow-md">
+              <div className="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-[#FDE3F0] to-[#EDE6FB] opacity-[0.25] blur-lg pointer-events-none" />
+              <div className="relative bg-white dark:bg-[#0D0C22] p-8 rounded-3xl border border-gray-200 dark:border-[#232252] text-center shadow-lg">
+                <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1.5 mb-5 shadow-sm">
                   <img
                     src={resolveAssetUrl('assets/brand/aza_linkedin.jpg')}
                     alt="Azahalia Puyen, fundadora de AP Education"

@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
   return (
     <section id="hero-section" className="relative pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
       {/* Atmospheric gradients */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[950px] h-[500px] bg-gradient-to-tr from-[#4705ED]/15 via-[#FE007A]/15 to-[#00E19B]/10 blur-[130px] -z-10 rounded-full pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[950px] h-[500px] bg-gradient-to-tr from-[#4705ED]/8 via-[#FE007A]/8 to-[#00E19B]/6 blur-[100px] -z-10 rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
               <a
                 id="hero-cta-enroll"
                 href="#contacto"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#FE007A] text-white font-bold text-base glow-magenta hover:bg-[#e0006c] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[#FE007A] text-white font-bold text-base hover:bg-[#e0006c] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 shadow-md"
               >
                 <span>Inscríbete ahora</span>
                 <ArrowRight className="w-5 h-5" />
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
               <div className="absolute inset-8 rounded-full border border-dashed border-[#FE007A]/30 dark:border-[#FE007A]/40" />
 
               {/* Center Core Hub */}
-              <div className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1 shadow-2xl glow-magenta animate-float">
+              <div className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1 shadow-xl animate-float">
                 <div className="w-full h-full bg-white dark:bg-[#151433] rounded-[22px] p-2 flex items-center justify-center overflow-hidden">
                   <img
                     src={resolveAssetUrl('assets/brand/back2academy2026.png')}

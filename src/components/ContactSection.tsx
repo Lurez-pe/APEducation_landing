@@ -61,8 +61,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
   return (
     <section id="contacto" className="py-20 lg:py-28 relative overflow-hidden">
       {/* Glow decorative background */}
-      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#FE007A]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-10 right-10 w-96 h-96 bg-[#4705ED]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#FE007A]/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 right-10 w-96 h-96 bg-[#4705ED]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -286,7 +286,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
                 id="contact-submit-btn"
                 type="submit"
                 disabled={submitting}
-                className="w-full py-4 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-base glow-magenta transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                className="w-full py-4 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-base shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
               >
                 <span>{submitting ? 'Procesando información...' : 'Enviar Solicitud de Información'}</span>
                 <Send className="w-4 h-4" />

@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
             href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20programas"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:inline-flex h-11 w-[136px] items-center justify-center rounded-xl bg-[#4705ED] px-2.5 py-1.5 transition-all shadow-md shadow-[#4705ED]/20 hover:-translate-y-0.5"
+            className="hidden sm:inline-flex h-11 w-[136px] items-center justify-center rounded-xl bg-[#4705ED] px-2.5 py-1.5 transition-all shadow-sm hover:-translate-y-0.5"
           >
             <img
               src={resolveAssetUrl('assets/brand/wpp-horizontal.png')}

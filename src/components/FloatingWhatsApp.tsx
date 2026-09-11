@@ -28,7 +28,7 @@ export const FloatingWhatsApp: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp a AP Education"
-        className="w-[50px] h-[50px] rounded-full bg-transparent text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all glow-purple relative"
+        className="w-[50px] h-[50px] rounded-full bg-transparent text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all relative"
       >
         <span className="absolute inset-0 rounded-full bg-white" aria-hidden="true" />
         <img

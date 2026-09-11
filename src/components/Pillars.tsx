@@ -166,7 +166,7 @@ export const Pillars: React.FC = () => {
                   aria-hidden={isHidden}
                   tabIndex={isHidden ? -1 : 0}
                   aria-current={isActive ? 'true' : undefined}
-                  className={`w-full min-h-[300px] sm:min-h-[315px] text-left bg-white dark:bg-[#151433] p-7 sm:p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${isActive ? 'ring-2 ring-[#FE007A]/70 shadow-[0_22px_45px_rgba(28,28,66,0.24)]' : ''} ${pillar.borderHover} transition-shadow duration-300 group cursor-pointer`}
+                  className={`w-full min-h-[300px] sm:min-h-[315px] text-left bg-white dark:bg-[#151433] p-7 sm:p-8 rounded-3xl border border-gray-100 dark:border-[#232252] shadow-sm hover:shadow-xl ${isActive ? 'ring-2 ring-[#FE007A]/70 shadow-[0_12px_30px_rgba(28,28,66,0.14)]' : ''} ${pillar.borderHover} transition-shadow duration-300 group cursor-pointer`}
                 >
                   <div className={`w-14 h-14 rounded-2xl ${pillar.accentBg} ${pillar.accentText} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <IconComponent className="w-7 h-7" />

@@ -280,24 +280,24 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
         {showLab && (
           <div
             id="featured-ap-lab-card"
-            className="rounded-3xl p-8 lg:p-10 bg-gradient-to-r from-[#4705ED] to-[#1C1C42] text-white flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl font-nunito"
+            className="rounded-3xl p-8 lg:p-10 bg-gradient-to-r from-[#EEF1FB] via-[#EDE6FB] to-[#FDE3F0] text-[#1C1C42] flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-lg border border-[#4705ED]/10 font-nunito"
           >
-            <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#FE007A]/30 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#FE007A]/10 rounded-full blur-2xl pointer-events-none" />
 
             <div className="max-w-xl relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#00E19B] text-xs font-bold mb-4">
-                <Rocket className="w-4 h-4 text-[#00E19B]" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1C1C42]/5 text-deep-teal text-xs font-bold mb-4">
+                <Rocket className="w-4 h-4" />
                 <span>Laboratorio Interdisciplinario STEAM</span>
               </div>
-              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-3">
+              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mb-3 text-[#1C1C42]">
                 AP LAB: Experiencia STEAM Total
               </h3>
-              <p className="text-sm sm:text-base text-gray-200 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
                 Talleres intensivos donde se unen ciencia, robótica virtual, matemáticas aplicadas y arte digital. Los
                 estudiantes resuelven misiones espaciales simuladas, construyen prototipos tecnológicos y presentan sus
                 descubrimientos en comunidad abierta.
               </p>
-              <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#00E19B]">
+              <div className="flex flex-wrap gap-4 text-xs font-semibold text-deep-teal">
                 <span>✦ Retos interdisciplinarios</span>
                 <span>✦ Proyectos con impacto social</span>
                 <span>✦ Portafolio digital de ingeniería</span>
@@ -307,7 +307,7 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
             <div className="relative z-10 w-full lg:w-auto flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setSelectedProgram(PROGRAMS.find((p) => p.id === 'ap-lab') || null)}
-                className="w-full lg:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm text-center transition-all cursor-pointer"
+                className="w-full lg:w-auto px-6 py-4 rounded-xl bg-[#4705ED]/10 hover:bg-[#4705ED]/20 border border-[#4705ED]/30 text-[#4705ED] font-bold text-sm text-center transition-all cursor-pointer"
               >
                 Ver Plan AP LAB
               </button>
@@ -316,7 +316,7 @@ export const Programs: React.FC<ProgramsProps> = ({ onSelectProgramForContact })
                 href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20deseo%20inscribirme%20al%20AP%20LAB"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full lg:w-auto px-8 py-4 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-sm text-center shadow-lg glow-magenta transition-all flex items-center justify-center gap-2"
+                className="w-full lg:w-auto px-8 py-4 rounded-xl bg-[#FE007A] hover:bg-[#e0006c] text-white font-bold text-sm text-center shadow-md transition-all flex items-center justify-center gap-2"
               >
                 <span>Unirse al AP LAB</span>
                 <Rocket className="w-4 h-4" />
