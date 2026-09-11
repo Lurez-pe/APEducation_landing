@@ -7,6 +7,8 @@ interface NavbarProps {
   onOpenContactModal?: () => void;
 }
 
+const resolveAssetUrl = (assetPath: string) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\/+/, '')}`;
+
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -41,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
         {/* Brand Logo */}
         <a href="#" className="flex min-w-0 items-center gap-3 group focus:outline-none" id="brand-logo">
           <img
-            src="/assets/brand/ap-education-logo.png"
+            src={resolveAssetUrl('assets/brand/ap-education-logo.png')}
             alt="AP Education"
             className="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
           />
@@ -77,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
             className="hidden sm:inline-flex h-11 w-[136px] items-center justify-center rounded-xl bg-[#4705ED] px-2.5 py-1.5 transition-all shadow-md shadow-[#4705ED]/20 hover:-translate-y-0.5"
           >
             <img
-              src="/assets/brand/wpp-horizontal.png"
+              src={resolveAssetUrl('assets/brand/wpp-horizontal.png')}
               alt="WhatsApp"
               className="block max-h-full max-w-full object-contain"
             />

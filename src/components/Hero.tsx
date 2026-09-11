@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Users, Award, Rocket, Puzzle, GraduationCap, HandMetal, Sparkles } from 'lucide-react';
 
+const resolveAssetUrl = (assetPath: string) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\/+/, '')}`;
+
 export const Hero: React.FC = () => {
   return (
     <section id="hero-section" className="relative pt-32 lg:pt-40 pb-20 lg:pb-28 overflow-hidden">
@@ -55,7 +57,7 @@ export const Hero: React.FC = () => {
                 className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white dark:bg-[#151433] border border-gray-200 dark:border-[#232252] hover:border-[#4705ED] text-[#1C1C42] dark:text-white font-bold text-base shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2.5"
               >
                 <img
-                  src="/assets/brand/wpp_cuadrado.png"
+                  src={resolveAssetUrl('assets/brand/wpp_cuadrado.png')}
                   alt="WhatsApp"
                   className="w-5 h-5 object-contain"
                 />
@@ -91,7 +93,7 @@ export const Hero: React.FC = () => {
               <div className="relative z-10 w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1 shadow-2xl glow-magenta animate-float">
                 <div className="w-full h-full bg-white dark:bg-[#151433] rounded-[22px] p-2 flex items-center justify-center overflow-hidden">
                   <img
-                    src="/assets/brand/back2academy2026.png"
+                    src={resolveAssetUrl('assets/brand/back2academy2026.png')}
                     alt="Back to Academy 2026"
                     className="w-full h-full object-contain rounded-[16px]"
                   />

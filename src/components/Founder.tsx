@@ -1,6 +1,8 @@
 import React from 'react';
 import { Award, Sparkles, CheckCircle2 } from 'lucide-react';
 
+const resolveAssetUrl = (assetPath: string) => `${import.meta.env.BASE_URL}${assetPath.replace(/^\/+/, '')}`;
+
 export const Founder: React.FC = () => {
   return (
     <section className="py-20 lg:py-24 bg-white dark:bg-[#151433] border-b border-gray-100 dark:border-[#232252] transition-colors duration-300">
@@ -13,7 +15,7 @@ export const Founder: React.FC = () => {
               <div className="relative bg-white dark:bg-[#0D0C22] p-8 rounded-3xl border border-gray-200 dark:border-[#232252] text-center shadow-xl">
                 <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1.5 mb-5 shadow-md">
                   <img
-                    src="/assets/brand/aza_linkedin.jpg"
+                    src={resolveAssetUrl('assets/brand/aza_linkedin.jpg')}
                     alt="Azahalia Puyen, fundadora de AP Education"
                     className="w-full h-full rounded-full object-cover object-top"
                   />
