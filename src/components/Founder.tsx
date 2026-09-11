@@ -15,7 +15,7 @@ export const Founder: React.FC = () => {
               <div className="relative bg-white dark:bg-[#0D0C22] p-8 rounded-3xl border border-gray-200 dark:border-[#232252] text-center shadow-lg">
                 <div className="w-36 h-36 mx-auto rounded-full bg-gradient-to-tr from-[#4705ED] to-[#FE007A] p-1.5 mb-5 shadow-sm">
                   <img
-                    src={resolveAssetUrl('assets/brand/aza_linkedin.jpg')}
+                    src={resolveAssetUrl('assets/brand/aza_linkedin.png')}
                     alt="Azahalia Puyen, fundadora de AP Education"
                     className="w-full h-full rounded-full object-cover object-top"
                   />
