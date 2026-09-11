@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+const resolveAssetUrl = (assetPath: string) =>
+  `${import.meta.env.BASE_URL}${assetPath.replace(/^\/+/, '')}`;
+
 export const FloatingWhatsApp: React.FC = () => {
   const [hovered, setHovered] = useState(false);
 
@@ -29,7 +32,7 @@ export const FloatingWhatsApp: React.FC = () => {
       >
         <span className="absolute inset-0 rounded-full bg-white" aria-hidden="true" />
         <img
-          src="/assets/brand/wpp_circle.png"
+          src={resolveAssetUrl('assets/brand/wpp_circle.png')}
           alt="WhatsApp"
           className="relative z-10 w-[46px] h-[46px] rounded-full object-contain"
         />
