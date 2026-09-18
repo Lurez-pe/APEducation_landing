@@ -240,33 +240,33 @@ export const FAQS: FaqItem[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
-    id: 'taller-stem-interactivo',
+    id: 'acompañar-sin-perseguir',
     type: 'Gratuito',
     date: 'Próximamente',
-    title: 'Taller STEM Interactivo',
+    title: 'Taller Psicológico',
     description:
-      'Un espacio gratuito para descubrir la ciencia y la tecnología jugando: robótica, diseño 3D y retos en equipo para niños y adolescentes.',
+      'Claves para acompañar a nuestros hijos en el mundo digital.',
     meta: 'Cupos limitados · Inscripción previa',
     image: 'assets/anuncios/taller_interactua.jpeg',
     cta: {
       label: 'Inscribirme',
-      href: 'https://wa.me/51951847956?text=Hola%20AP%20Education%2C%20quiero%20inscribirme%20al%20Taller%20STEM%20Interactivo.',
+      href: 'https://forms.gle/TJvkRYHLy85gNVzy7',
     },
     featured: true,
   },
   {
-    id: 'convocatoria-equipo-nasa',
-    type: 'Convocatoria',
-    date: 'Inscripciones abiertas',
-    title: 'Convocatoria Equipo NASA',
+    id: 'anuncio-equipo-nasa',
+    type: 'Anuncio',
+    date: 'Inscripciones cerradas',
+    title: 'Anuncio del Equipo NASA',
     description:
-      'Conoce cómo participamos en desafíos espaciales simulados y cómo tu hij@ puede postular al próximo equipo internacional de la misión.',
+      'Conoce a los participantes en los desafíos espaciales de la NASA Space Apps Challenge.',
     meta: 'Para estudiantes de 12 años a más',
     image: 'assets/anuncios/equipo_nasa.jpg',
   },
-  {
-    id: 'comunidad-mentoras-stem',
-    type: 'Convocatoria',
+{
+    id: 'convocatoria-equipo-nasa',
+    type: 'Anuncio',
     date: 'Inscripciones abiertas',
     title: 'Comunidad Mentoras STEM',
     description:

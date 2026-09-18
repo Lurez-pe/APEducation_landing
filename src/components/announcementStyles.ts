@@ -7,4 +7,5 @@ export const badgeStyles: Record<AnnouncementType, string> = {
   Gratuito: 'bg-[#00E19B]/15 text-[#0C8C63] dark:text-[#00E19B]',
   Evento: 'bg-[#FE007A]/15 text-[#FE007A]',
   Convocatoria: 'bg-[#FFB600]/15 text-[#A87A00] dark:text-[#FFB600]',
+  Anuncio: 'bg-[#4705ED]/15 text-[#4705ED] dark:text-[#A78BFA]',
 };

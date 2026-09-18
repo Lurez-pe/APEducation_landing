@@ -44,7 +44,7 @@ export interface MethodPhase {
   iconName: string;
 }
 
-export type AnnouncementType = 'Gratuito' | 'Evento' | 'Convocatoria';
+export type AnnouncementType = 'Gratuito' | 'Evento' | 'Convocatoria' | 'Anuncio';
 
 export interface AnnouncementCta {
   label: string;
