@@ -1,4 +1,4 @@
-import { Program, Testimonial, FaqItem, MethodPhase } from './types';
+import { Program, Testimonial, FaqItem, MethodPhase, Announcement } from './types';
 
 export const PROGRAMS: Program[] = [
   {
@@ -235,5 +235,43 @@ export const FAQS: FaqItem[] = [
     question: '¿Cómo es el proceso de inscripción y cuáles son los métodos de pago?',
     category: 'Inscripción',
     answer: 'El proceso es muy ágil: completas el formulario de contacto o nos escribes directamente por WhatsApp al +51 951 847 956. Coordinamos una breve sesión de evaluación diagnóstica de intereses sin costo, confirmas tu horario y aseguras la vacante. Aceptamos transferencias bancarias, Yape/Plin (Perú) y medios digitales seguros.'
+  }
+];
+
+export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: 'taller-stem-interactivo',
+    type: 'Gratuito',
+    date: 'Próximamente',
+    title: 'Taller STEM Interactivo',
+    description:
+      'Un espacio gratuito para descubrir la ciencia y la tecnología jugando: robótica, diseño 3D y retos en equipo para niños y adolescentes.',
+    meta: 'Cupos limitados · Inscripción previa',
+    image: 'assets/anuncios/taller_interactua.jpeg',
+    cta: {
+      label: 'Inscribirme',
+      href: 'https://wa.me/51951847956?text=Hola%20AP%20Education%2C%20quiero%20inscribirme%20al%20Taller%20STEM%20Interactivo.',
+    },
+    featured: true,
+  },
+  {
+    id: 'convocatoria-equipo-nasa',
+    type: 'Convocatoria',
+    date: 'Inscripciones abiertas',
+    title: 'Convocatoria Equipo NASA',
+    description:
+      'Conoce cómo participamos en desafíos espaciales simulados y cómo tu hij@ puede postular al próximo equipo internacional de la misión.',
+    meta: 'Para estudiantes de 12 años a más',
+    image: 'assets/anuncios/equipo_nasa.jpg',
+  },
+  {
+    id: 'comunidad-mentoras-stem',
+    type: 'Convocatoria',
+    date: 'Inscripciones abiertas',
+    title: 'Comunidad Mentoras STEM',
+    description:
+      'Sumamos científicas y profesionales STEAM que inspiran, acompañan y abren camino a las nuevas generaciones en ciencia y tecnología.',
+    meta: 'Voluntariado · Hora Perú',
+    image: 'assets/anuncios/mentoras_stem.jpeg',
   }
 ];

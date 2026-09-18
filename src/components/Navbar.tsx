@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
+import { AnnouncementBar } from './AnnouncementBar';
+import { ANNOUNCEMENTS } from '../data';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -11,6 +13,7 @@ const resolveAssetUrl = (assetPath: string) => `${import.meta.env.BASE_URL}${ass
 
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
+  const featuredAnnouncement = ANNOUNCEMENTS.find((item) => item.featured);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
     { name: '¿Qué es?', href: '#que-es' },
     { name: 'Programas', href: '#programas' },
     { name: 'Metodología', href: '#metodologia' },
+    { name: 'Anuncios', href: '#anuncios' },
     { name: 'Comunidad', href: '#comunidad' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'FAQ', href: '#faq' },
@@ -39,6 +43,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
           : 'bg-white/80 dark:bg-[#0D0C22]/85 backdrop-blur-sm border-b border-transparent'
       }`}
     >
+      <AnnouncementBar announcement={featuredAnnouncement} />
+
       <div className="max-w-7xl mx-auto min-w-0 px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <a href="#" className="flex min-w-0 items-center gap-3 group focus:outline-none" id="brand-logo">

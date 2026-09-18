@@ -43,3 +43,22 @@ export interface MethodPhase {
   example: string;
   iconName: string;
 }
+
+export type AnnouncementType = 'Gratuito' | 'Evento' | 'Convocatoria';
+
+export interface AnnouncementCta {
+  label: string;
+  href: string;
+}
+
+export interface Announcement {
+  id: string;
+  type: AnnouncementType;
+  date: string;
+  title: string;
+  description: string;
+  meta: string;
+  image: string;
+  cta?: AnnouncementCta;
+  featured?: boolean;
+}

@@ -12,7 +12,7 @@ import { Programs } from './components/Programs';
 import { Methodology } from './components/Methodology';
 import { LearningQuest } from './components/LearningQuest';
 import { FormatSection } from './components/FormatSection';
-import { Experiences } from './components/Experiences';
+import { Announcements } from './components/Announcements';
 import { Audiences } from './components/Audiences';
 import { Community } from './components/Community';
 import { Stats } from './components/Stats';
@@ -113,8 +113,8 @@ export default function App() {
         {/* 8. Clases Personalizadas & Formato */}
         <FormatSection />
 
-        {/* 8. Experiencias y Talleres Especiales */}
-        <Experiences />
+        {/* 8. Anuncios y Convocatorias */}
+        <Announcements />
 
         {/* 9. Para Quiénes Somos (4 perfiles) */}
         <Audiences />

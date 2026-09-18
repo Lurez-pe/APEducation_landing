@@ -10,7 +10,7 @@ body,
 }
 
 section[id] {
-  scroll-margin-top: 8rem;
+  scroll-margin-top: 11rem;
 }
 
 @theme {

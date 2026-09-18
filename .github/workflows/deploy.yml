@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - nuevo-estilo
+      - feature/anuncios
   workflow_dispatch:
 
 permissions:
