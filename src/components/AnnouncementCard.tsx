@@ -87,7 +87,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
       <div
         className={`relative z-10 order-1 overflow-hidden ${
           isVertical
-            ? 'w-full min-h-[280px] flex items-center justify-center bg-gradient-to-br from-[#EDE6FB] via-[#FDE3F0] to-[#DBF7EC] dark:from-[#14142E] dark:via-[#1A1228] dark:to-[#0F1B23]'
+            ? 'w-full min-h-[240px] flex items-center justify-center bg-gradient-to-br from-[#EDE6FB] via-[#FDE3F0] to-[#DBF7EC] dark:from-[#14142E] dark:via-[#1A1228] dark:to-[#0F1B23]'
             : 'md:order-2 md:w-[40%] lg:w-[40%] min-h-[240px] md:min-h-[390px]'
         }`}
       >
@@ -104,7 +104,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
               alt={`${announcement.title} — leer anuncio completo`}
               className={`object-cover ${
                 isVertical
-                  ? 'w-[150px] h-[188px] sm:w-[180px] sm:h-[225px]'
+                  ? 'w-[140px] h-[175px] sm:w-[160px] sm:h-[200px]'
                   : 'w-[150px] h-[188px] sm:w-[180px] sm:h-[225px] md:w-[195px] md:h-[244px] lg:w-[210px] lg:h-[263px]'
               }`}
             />
