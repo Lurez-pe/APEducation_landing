@@ -9,3 +9,10 @@ export const badgeStyles: Record<AnnouncementType, string> = {
   Convocatoria: 'bg-[#FFB600]/15 text-[#A87A00] dark:text-[#FFB600]',
   Anuncio: 'bg-[#4705ED]/15 text-[#4705ED] dark:text-[#A78BFA]',
 };
+
+export const accentStyles: Record<AnnouncementType, string> = {
+  Gratuito: 'text-[#0C8C63] dark:text-[#00E19B]',
+  Evento: 'text-[#FE007A]',
+  Convocatoria: 'text-[#A87A00] dark:text-[#FFB600]',
+  Anuncio: 'text-[#4705ED] dark:text-[#A78BFA]',
+};

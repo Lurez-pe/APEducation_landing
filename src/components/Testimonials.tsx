@@ -4,14 +4,14 @@ import { TESTIMONIALS } from '../data';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonios" className="py-20 lg:py-24">
+    <section id="comunidad" className="py-[1cm]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-[#FE007A]">
-            Historias de Éxito
+            Nuestra Comunidad
           </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#1C1C42] dark:text-white mt-2 mb-4">
-            Lo que dicen nuestras familias y estudiantes
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-2 mb-4">
+            Historias de éxito de nuestra comunidad
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-base">
             Resultados comprobados en confianza personal, calificaciones destacadas y amor genuino por el conocimiento.

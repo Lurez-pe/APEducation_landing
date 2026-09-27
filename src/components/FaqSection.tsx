@@ -12,14 +12,14 @@ export const FaqSection: React.FC = () => {
   return (
     <section
       id="faq"
-      className="py-20 bg-white dark:bg-[#151433] border-y border-gray-100 dark:border-[#232252] transition-colors duration-300"
+      className="py-[1cm] bg-white dark:bg-[#151433] border-y border-gray-100 dark:border-[#232252] transition-colors duration-300"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="text-xs font-bold uppercase tracking-widest text-[#4705ED] dark:text-[#00E19B]">
             Dudas Resueltas
           </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#1C1C42] dark:text-white mt-2">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-2">
             Preguntas Frecuentes
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mt-2">
@@ -57,7 +57,7 @@ export const FaqSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed border-t border-gray-100 dark:border-[#232252]/50 pt-4 animate-in fade-in duration-200">
+                  <div className="px-6 pb-6 text-sm text-gray-600 dark:text-gray-300 leading-relaxed border-t border-gray-100 dark:border-[#232252]/50 pt-4">
                     {faq.answer}
                   </div>
                 )}

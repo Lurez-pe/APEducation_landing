@@ -4,11 +4,12 @@ import { Announcement } from '../types';
 
 interface AnnouncementBarProps {
   announcement?: Announcement;
+  scrolled?: boolean;
 }
 
 const STORAGE_KEY = 'ap_announcement_dismissed';
 
-export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ announcement }) => {
+export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ announcement, scrolled = false }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
@@ -30,7 +31,9 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ announcement }
     <div
       role="region"
       aria-label="Anuncio destacado"
-      className="bg-gradient-to-r from-[#FE007A] via-[#4705ED] to-[#00E19B] text-white"
+      className={`transition-colors duration-300 ${
+        scrolled ? 'bg-gradient-to-r from-[#FE007A] via-[#4705ED] to-[#00E19B] text-white' : 'bg-transparent text-white'
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-center gap-3 text-xs sm:text-sm font-semibold">
         <Megaphone className="w-4 h-4 flex-shrink-0" aria-hidden />

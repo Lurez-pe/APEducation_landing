@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
-const resolveAssetUrl = (assetPath: string) =>
-  `${import.meta.env.BASE_URL}${assetPath.replace(/^\/+/, '')}`;
+import { resolveAssetUrl } from './announcementStyles';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [hovered, setHovered] = useState(false);
@@ -28,13 +26,12 @@ export const FloatingWhatsApp: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp a AP Education"
-        className="w-[50px] h-[50px] rounded-full bg-transparent text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all relative"
+        className="w-[48px] h-[48px] bg-transparent text-white flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all relative"
       >
-        <span className="absolute inset-0 rounded-full bg-white" aria-hidden="true" />
         <img
-          src={resolveAssetUrl('assets/brand/wpp_circle.png')}
+          src={resolveAssetUrl('assets/brand/wpp_cuadrado.png')}
           alt="WhatsApp"
-          className="relative z-10 w-[46px] h-[46px] rounded-full object-contain"
+          className="relative z-10 w-[48px] h-[48px] object-contain"
         />
       </a>
     </div>

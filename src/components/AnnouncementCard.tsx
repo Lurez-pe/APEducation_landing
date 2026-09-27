@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar, MapPin, ArrowUpRight, ZoomIn } from 'lucide-react';
 import { Announcement } from '../types';
-import { badgeStyles, resolveAssetUrl } from './announcementStyles';
+import { badgeStyles, resolveAssetUrl, accentStyles } from './announcementStyles';
 
 interface AnnouncementCardProps {
   announcement: Announcement;
@@ -26,8 +26,8 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
   return (
     <article
       onClick={onSelect}
-      className={`relative overflow-hidden rounded-3xl border border-gray-100 dark:border-[#232252] bg-white dark:bg-[#151433] shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 ${
-        isVertical ? 'flex flex-col' : 'flex flex-col md:flex-row'
+      className={`relative overflow-hidden rounded-3xl border border-gray-100 dark:border-[#232252] bg-white dark:bg-[#151433] shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 mx-auto ${
+        isVertical ? 'flex flex-col w-full max-w-[300px] sm:max-w-[320px] min-h-[490px]' : 'flex flex-col md:flex-row'
       } ${onSelect ? 'cursor-pointer' : ''}`}
     >
       {/* Soft fusion wash — no hard cut between content and image */}
@@ -40,54 +40,11 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
       <div aria-hidden className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-[#FFB600]/20 blur-3xl pointer-events-none" />
       <div aria-hidden className="absolute -bottom-16 right-6 w-72 h-72 rounded-full bg-[#4705ED]/15 blur-3xl pointer-events-none" />
 
-      {/* Content Zone */}
-      <div
-        className={`relative z-10 flex flex-col justify-center p-6 sm:p-8 ${
-          isVertical ? 'order-2 w-full' : 'order-2 md:order-1 md:flex-1 lg:p-10'
-        }`}
-      >
-        <div className="flex flex-wrap items-center gap-2">
-          <span className={`inline-flex items-center text-[11px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full ${badgeStyles[announcement.type]}`}>
-            {announcement.type}
-          </span>
-          <span className="flex items-center gap-1.5 text-xs font-bold text-gray-500 dark:text-gray-400">
-            <Calendar className="w-4 h-4 text-[#FE007A]" />
-            {announcement.date}
-          </span>
-        </div>
-
-        <h3 className={`font-heading font-extrabold text-[#1C1C42] dark:text-white mt-4 ${isVertical ? 'text-xl sm:text-2xl' : 'text-2xl sm:text-3xl'}`}>
-          {announcement.title}
-        </h3>
-        <p className={`text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed mt-3 text-justify ${isVertical ? 'max-w-full' : 'max-w-[80%]'}`}>
-          {announcement.description}
-        </p>
-
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
-          <span className="flex items-center gap-2 text-sm font-semibold text-gray-500 dark:text-gray-400">
-            <MapPin className="w-4 h-4 text-[#00E19B] flex-shrink-0" />
-            {announcement.meta}
-          </span>
-
-          {announcement.cta && (
-            <a
-              href={announcement.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#FE007A] px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-[#e0006c] hover:-translate-y-0.5 transition-all"
-            >
-              {announcement.cta.label}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          )}
-        </div>
-      </div>
-
-      {/* Tilted Image Zone — 4:5 frame, reduced, fused into the card */}
+      {/* Tilted Image Zone — top of the portrait card */}
       <div
         className={`relative z-10 order-1 overflow-hidden ${
           isVertical
-            ? 'w-full min-h-[240px] flex items-center justify-center bg-gradient-to-br from-[#EDE6FB] via-[#FDE3F0] to-[#DBF7EC] dark:from-[#14142E] dark:via-[#1A1228] dark:to-[#0F1B23]'
+            ? 'w-full h-[220px] sm:h-[250px] flex-shrink-0 flex items-center justify-center bg-gradient-to-br from-[#EDE6FB] via-[#FDE3F0] to-[#DBF7EC] dark:from-[#14142E] dark:via-[#1A1228] dark:to-[#0F1B23]'
             : 'md:order-2 md:w-[40%] lg:w-[40%] min-h-[240px] md:min-h-[390px]'
         }`}
       >
@@ -102,9 +59,9 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
             <img
               src={resolveAssetUrl(announcement.image)}
               alt={`${announcement.title} — leer anuncio completo`}
-              className={`object-cover ${
+              className={`object-contain ${
                 isVertical
-                  ? 'w-[140px] h-[175px] sm:w-[160px] sm:h-[200px]'
+                  ? 'w-[150px] h-[188px] sm:w-[170px] sm:h-[212px]'
                   : 'w-[150px] h-[188px] sm:w-[180px] sm:h-[225px] md:w-[195px] md:h-[244px] lg:w-[210px] lg:h-[263px]'
               }`}
             />
@@ -115,6 +72,51 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
             Ampliar
           </span>
         </button>
+      </div>
+
+      {/* Content Zone */}
+      <div
+        className={`relative z-10 flex flex-col justify-center p-5 sm:p-6 ${
+          isVertical ? 'order-2 w-full flex-1' : 'order-2 md:order-1 md:flex-1 lg:p-10'
+        }`}
+      >
+        <div className="flex flex-wrap items-center gap-2">
+          <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full ${badgeStyles[announcement.type]}`}>
+            {announcement.type}
+          </span>
+          <span className="flex items-center gap-1.5 text-[11px] font-bold text-gray-500 dark:text-gray-400">
+            <Calendar className="w-3.5 h-3.5 text-[#FE007A]" />
+            {announcement.date}
+          </span>
+        </div>
+
+        <h3 className={`font-heading font-extrabold bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-3 leading-tight ${isVertical ? 'text-lg sm:text-2xl' : 'text-xl sm:text-3xl'}`}>
+          <span className="line-clamp-2">{announcement.title}</span>
+        </h3>
+        <p className={`text-[9.5px] leading-snug mt-2 text-justify ${isVertical ? 'max-w-full' : 'max-w-[80%]'} text-[#1C1C42]/70 dark:text-gray-400`}>
+          {announcement.description}
+        </p>
+
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+          <span className={`inline-flex items-center gap-1.5 text-xs font-bold ${accentStyles[announcement.type]}`}>
+            <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+            {announcement.meta}
+          </span>
+
+          {announcement.cta && (
+            <a
+              href={announcement.cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#4705ED] px-5 py-2.5 text-xs font-bold text-white shadow-lg hover:bg-[#3a04c4] hover:-translate-y-0.5 transition-all"
+            >
+              {announcement.cta.label}
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
+
+
       </div>
     </article>
   );

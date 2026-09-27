@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { MessageCircle, Mail, Camera, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
-interface ContactSectionProps {
-  selectedProgram?: string;
-}
-
-export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram }) => {
+export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -15,12 +11,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
 
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    if (selectedProgram) {
-      setProgram(selectedProgram);
-    }
-  }, [selectedProgram]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +49,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
   };
 
   return (
-    <section id="contacto" className="py-20 lg:py-28 relative overflow-hidden">
+    <section id="contacto" className="py-[1cm] relative overflow-hidden">
       {/* Glow decorative background */}
       <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#FE007A]/6 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#4705ED]/5 rounded-full blur-3xl pointer-events-none" />
@@ -71,7 +61,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ selectedProgram 
             <span className="text-xs font-bold uppercase tracking-widest text-[#FE007A]">
               Únete a Nosotros
             </span>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-5xl text-[#1C1C42] dark:text-white mt-2 mb-6 leading-tight">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-2 mb-6 leading-tight">
               ¿Listo para formar parte de AP Education?
             </h2>
             <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">

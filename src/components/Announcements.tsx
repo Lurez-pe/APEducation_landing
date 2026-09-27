@@ -111,19 +111,12 @@ export const Announcements: React.FC = () => {
   const closeModal = () => setActive(null);
 
   return (
-    <section id="anuncios" className="py-20 lg:py-24">
+    <section id="anuncios" className="py-[1cm] bg-white dark:bg-[#151433] border-y border-gray-100 dark:border-[#232252] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#FE007A]">
-            Novedades y Agenda
-          </span>
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#1C1C42] dark:text-white mt-2 mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-2 mb-4">
             Anuncios y Convocatorias
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 text-base">
-            Actividades gratuitas, eventos en los que participamos y convocatorias abiertas para nuestra comunidad.
-            Toca la imagen para leer el anuncio completo.
-          </p>
         </div>
 
         <div
@@ -140,7 +133,7 @@ export const Announcements: React.FC = () => {
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          <div className="relative min-h-[620px] sm:min-h-[580px]">
+          <div className="relative min-h-[500px] sm:min-h-[540px]">
             {ANNOUNCEMENTS.map((announcement, index) => {
               const rawOffset = index - activeIndex;
               const offset =
@@ -157,7 +150,7 @@ export const Announcements: React.FC = () => {
               return (
                 <div
                   key={announcement.id}
-                  className={`absolute left-1/2 top-1/2 w-[min(380px,76vw)] px-1 transition-all duration-[1400ms] ease-in-out ${
+                  className={`absolute left-1/2 top-1/2 w-[min(320px,72vw)] px-1 transition-all duration-[1400ms] ease-in-out ${
                     isHidden ? 'pointer-events-none' : ''
                   }`}
                   style={{

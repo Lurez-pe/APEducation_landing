@@ -25,7 +25,7 @@ export const Stats: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-[#FDE3F0] via-[#EDE6FB] to-[#DBF7EC] text-[#1C1C42] border-y border-[#4705ED]/10">
+    <section className="py-[1cm] bg-gradient-to-r from-[#FDE3F0] via-[#EDE6FB] to-[#DBF7EC] text-[#1C1C42] border-y border-[#4705ED]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {stats.map((stat, idx) => (
