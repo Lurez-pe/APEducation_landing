@@ -6,6 +6,7 @@ on:
       - main
       - nuevo-estilo
       - feature/anuncios
+      - rediseno-estructura
   workflow_dispatch:
 
 permissions:
