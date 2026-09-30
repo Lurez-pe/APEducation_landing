@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
     >
       <div className="relative bg-[#151433] dark:bg-[#151433] shadow-2xl select-none">
         {/* Slides */}
-        <div className="relative h-[calc(100svh+160px)] min-h-[710px] sm:h-[860px]">
+        <div className="relative h-[calc(100svh+170px)] min-h-[720px] sm:h-[870px]">
           {HERO_SLIDES.map((slide, index) => {
             const isActive = index === activeIndex;
 
