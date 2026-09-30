@@ -1,4 +1,4 @@
-import { Testimonial, FaqItem, MethodPhase, Announcement, ProgramInfo } from './types';
+import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo } from './types';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -154,18 +154,19 @@ export const FAQS: FaqItem[] = [
   }
 ];
 
-export const ANNOUNCEMENTS: Announcement[] = [
+/**
+ * Seccion HERO — carrusel de portada.
+ * Es independiente de ANNOUNCEMENTS: consume solo las imagenes de assets/hero/
+ * y no comparte contenido con la seccion de anuncios.
+ */
+export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'nasa-space-apps-2026',
     title: 'Impulsamos el talento que transforma el futuro:',
     description:
       'Somos aliados del NASA Space Apps Challenge Arequipa 2026, conectando a nuestros estudiantes con una experiencia internacional de ciencia, tecnología e innovación.',
-    image: 'assets/anuncios/hero_1_thumb.webp',
     imageHeroDesktop: 'assets/hero/hero_1.webp',
     imageHeroMobile: 'assets/hero/hero_1_m.webp',
-    cta: null,
-    featured: true,
-    minimalHero: true,
   },
   {
     id: 'capital-semilla-mtpe',
@@ -173,23 +174,17 @@ export const ANNOUNCEMENTS: Announcement[] = [
     subtitle: 'AP Education sigue creciendo',
     description:
       'Fuimos reconocidos como ganadores del Capital Semilla del II Curso Virtual "Aprende a Emprender", organizado por el Ministerio de Trabajo y Promoción del Empleo.',
-    image: 'assets/anuncios/hero_2_thumb.webp',
     imageHeroDesktop: 'assets/hero/hero_2.webp',
     imageHeroMobile: 'assets/hero/hero_2_m.webp',
-    cta: null,
-    minimalHero: true,
   },
   {
     id: 'mentoras-trainee',
     title: 'FORMAMOS A QUIENES FORMARÁN',
     subtitle: 'Nace Mentoras Trainee',
     description:
-      'Un programa de formación en Innovación, Tecnología y Educación para jóvenes que quieren desarrollar sus habilidades como futuras mentoras STEM.',
-    image: 'assets/anuncios/hero_3_thumb.webp',
+      'Un programa de formación en innovación, Tecnología y Educación para jóvenes que quieren desarrollar sus habilidades como futuras mentoras STEM.',
     imageHeroDesktop: 'assets/hero/hero_3.webp',
     imageHeroMobile: 'assets/hero/hero_3_m.webp',
-    cta: null,
-    minimalHero: true,
   },
   {
     id: 'centro-psicologico-interactua',
@@ -197,11 +192,8 @@ export const ANNOUNCEMENTS: Announcement[] = [
     subtitle: 'AP Education × Centro Psicológico Interactúa',
     description:
       'Una alianza estratégica para brindar a nuestra comunidad beneficios y descuentos exclusivos en atención psicológica y talleres para estudiantes, familias, docentes y colaboradores.',
-    image: 'assets/anuncios/hero_4_thumb.webp',
     imageHeroDesktop: 'assets/hero/hero_4.webp',
     imageHeroMobile: 'assets/hero/hero_4_m.webp',
-    cta: null,
-    minimalHero: true,
   },
   {
     id: 'embajadora-stem-women',
@@ -209,10 +201,49 @@ export const ANNOUNCEMENTS: Announcement[] = [
     subtitle: 'Nuestra fundadora es Embajadora STEM Women',
     description:
       'Azahalia Puyen, CEO & Founder de AP Education, fue incorporada como Embajadora de STEM Women Congress Perú. Reconocimiento que fortalece nuestro compromiso con la educación STEM, la innovación y el desarrollo del talento.',
-    image: 'assets/anuncios/hero_5_thumb.webp',
     imageHeroDesktop: 'assets/hero/hero_5.webp',
     imageHeroMobile: 'assets/hero/hero_5_m.webp',
-    cta: null,
-    minimalHero: true,
+  },
+];
+
+/**
+ * Seccion ANUNCIOS — carrusel de anuncios y convocatorias.
+ * Contenido propio con las imagenes de assets/anuncios/.
+ */
+export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: 'acompañar-sin-perseguir',
+    type: 'Gratuito',
+    date: 'Próximamente',
+    title: 'Taller Psicológico',
+    description:
+      'Claves para acompañar a nuestros hijos en el mundo digital.',
+    meta: 'Cupos limitados · Inscripción previa',
+    image: 'assets/anuncios/taller_interactua.jpeg',
+    cta: {
+      label: 'Inscribirme',
+      href: 'https://forms.gle/TJvkRYHLy85gNVzy7',
+    },
+    featured: true,
+  },
+  {
+    id: 'anuncio-equipo-nasa',
+    type: 'Anuncio',
+    date: 'Inscripciones cerradas',
+    title: 'Anuncio del Equipo NASA',
+    description:
+      'Conoce a los participantes en los desafíos espaciales de la NASA Space Apps Challenge.',
+    meta: 'Para estudiantes de 12 años a más',
+    image: 'assets/anuncios/equipo_nasa.jpg',
+  },
+  {
+    id: 'convocatoria-equipo-nasa',
+    type: 'Anuncio',
+    date: 'Inscripciones abiertas',
+    title: 'Comunidad Mentoras STEM',
+    description:
+      'Sumamos científicas y profesionales STEAM que inspiran, acompañan y abren camino a las nuevas generaciones en ciencia y tecnología.',
+    meta: 'Voluntariado · Hora Perú',
+    image: 'assets/anuncios/mentoras_stem.jpeg',
   },
 ];

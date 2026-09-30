@@ -33,18 +33,24 @@ export interface AnnouncementCta {
 
 export interface Announcement {
   id: string;
+  type: AnnouncementType;
+  date: string;
+  title: string;
+  description: string;
+  meta: string;
+  image: string;
+  cta?: AnnouncementCta | null;
+  featured?: boolean;
+}
+
+/** Slide del hero de portada. Seccion independiente de Announcement. */
+export interface HeroSlide {
+  id: string;
   title: string;
   subtitle?: string;
   description: string;
-  type?: AnnouncementType;
-  date?: string;
-  meta?: string;
-  image: string;
-  imageHeroDesktop?: string;
-  imageHeroMobile?: string;
-  cta?: AnnouncementCta | null;
-  featured?: boolean;
-  minimalHero?: boolean;
+  imageHeroDesktop: string;
+  imageHeroMobile: string;
 }
 
 export interface ProgramInfo {

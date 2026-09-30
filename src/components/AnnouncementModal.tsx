@@ -38,30 +38,21 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
           >
             <X className="w-4 h-4" />
           </button>
-          {announcement.type && (
-            <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded-full ${badgeStyles[announcement.type]}`}>
-              {announcement.type}
-            </span>
-          )}
+          <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded-full ${badgeStyles[announcement.type]}`}>
+            {announcement.type}
+          </span>
           <h2 className="font-heading font-extrabold text-sm sm:text-base pr-10 text-[#1C1C42] dark:text-white mt-1">
             {announcement.title}
           </h2>
-          {announcement.subtitle && (
-            <p className="font-heading font-bold text-brand-purple dark:text-brand-teal text-[12px] mt-0.5">
-              {announcement.subtitle}
-            </p>
-          )}
-          {announcement.date && (
-            <p className="text-gray-500 dark:text-gray-400 text-[11px] font-semibold mt-0.5 flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5 text-[#FE007A]" />
-              {announcement.date}
-            </p>
-          )}
+          <p className="text-gray-500 dark:text-gray-400 text-[11px] font-semibold mt-0.5 flex items-center gap-1.5">
+            <Calendar className="w-3.5 h-3.5 text-[#FE007A]" />
+            {announcement.date}
+          </p>
         </div>
 
         {/* Modal Image — large centered 4:5 frame, image always complete */}
         <div className="min-h-0 flex-1 flex items-center justify-center overflow-hidden bg-[#FAFAFE] dark:bg-[#0D0C22] p-2 sm:p-3">
-          <div className="relative aspect-[9/16] h-[calc(100dvh-12rem)] max-h-full max-w-full w-auto rounded-xl border border-gray-100 dark:border-[#232252] shadow-lg overflow-hidden">
+          <div className="relative aspect-[4/5] h-[calc(100dvh-12rem)] max-h-full max-w-full w-auto rounded-xl border border-gray-100 dark:border-[#232252] shadow-lg overflow-hidden">
             <img
               src={resolveAssetUrl(announcement.image)}
               alt={`${announcement.title} — anuncio completo`}
@@ -76,14 +67,10 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
             {announcement.description}
           </p>
           <div className="flex flex-wrap items-center justify-between gap-2">
-            {announcement.meta ? (
-              <span className="flex items-center gap-1.5 text-[11px] font-semibold text-gray-500 dark:text-gray-400">
-                <MapPin className="w-3.5 h-3.5 text-[#00E19B] flex-shrink-0" />
-                {announcement.meta}
-              </span>
-            ) : (
-              <span />
-            )}
+            <span className="flex items-center gap-1.5 text-[11px] font-semibold text-gray-500 dark:text-gray-400">
+              <MapPin className="w-3.5 h-3.5 text-[#00E19B] flex-shrink-0" />
+              {announcement.meta}
+            </span>
             {announcement.cta && (
               <a
                 href={announcement.cta.href}
