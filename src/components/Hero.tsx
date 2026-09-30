@@ -14,17 +14,17 @@ const HERO_OVERLAY =
 
 const HeroContent: React.FC<{ slide: HeroSlide }> = ({ slide }) => (
   <>
-    <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-white leading-[1.12] tracking-tight mb-1.5 sm:mb-5">
+    <h1 className="font-heading font-extrabold text-2xl sm:text-4xl xl:text-5xl text-white leading-[1.12] tracking-tight mb-1.5 sm:mb-5">
       {slide.title}
     </h1>
 
     {slide.subtitle && (
-      <p className="font-heading font-bold text-base sm:text-xl lg:text-2xl text-white/95 leading-snug tracking-tight mb-1.5 sm:mb-4">
+      <p className="font-heading font-bold text-base sm:text-xl xl:text-2xl text-white/95 leading-snug tracking-tight mb-1.5 sm:mb-4">
         {slide.subtitle}
       </p>
     )}
 
-    <p className="text-sm sm:text-base lg:text-base text-white/85 max-w-xl leading-relaxed">
+    <p className="text-sm sm:text-base lg:text-[15px] xl:text-base text-white/85 max-w-xl leading-relaxed">
       {slide.description}
     </p>
   </>
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
     >
       <div className="relative bg-[#151433] dark:bg-[#151433] shadow-2xl select-none">
         {/* Slides */}
-        <div className="relative h-[calc(100svh+170px)] min-h-[720px] xl:h-auto xl:min-h-0 xl:aspect-[2/1]">
+        <div className="relative h-[calc(100svh+170px)] min-h-[720px] lg:h-auto lg:min-h-0 lg:aspect-[2/1]">
           {HERO_SLIDES.map((slide, index) => {
             const isActive = index === activeIndex;
 
@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                 <div className={HERO_BACKDROP} />
 
                 {/* Content: top 40% of the card on mobile, 40% left column on desktop */}
-                <div className="relative z-10 flex flex-col items-start justify-start h-[40%] max-w-2xl p-6 sm:p-12 lg:p-16 pt-[170px] sm:pt-40 lg:pt-36 lg:ml-10 lg:w-[40%] lg:max-w-none lg:h-full lg:justify-center">
+                <div className="relative z-10 flex flex-col items-start justify-start h-[40%] max-w-2xl p-6 sm:p-12 lg:p-16 pt-[170px] sm:pt-40 lg:pt-36 lg:ml-10 lg:w-[46%] xl:w-[40%] lg:max-w-none lg:h-full lg:justify-center">
                   <HeroContent slide={slide} />
                 </div>
 
