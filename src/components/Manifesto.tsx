@@ -20,6 +20,7 @@ export const Manifesto: React.FC = () => {
               <iframe
                 width="560"
                 height="315"
+                loading="lazy"
                 src="https://www.youtube.com/embed/4lL09vNW9CA?si=B4Mj8QgZ2RH3CMxD"
                 title="YouTube video player"
                 frameBorder="0"

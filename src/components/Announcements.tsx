@@ -17,6 +17,11 @@ export const Announcements: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const touchStart = useRef<{ x: number; y: number; time: number } | null>(null);
   const gestureLocked = useRef(false);
+  const modalOpen = useRef(false);
+
+  useEffect(() => {
+    modalOpen.current = active !== null;
+  }, [active]);
 
   const pauseAutoplay = () => {
     if (Date.now() < pauseUntil.current) return;
@@ -38,6 +43,7 @@ export const Announcements: React.FC = () => {
   useEffect(() => {
     const interval = window.setInterval(() => {
       if (Date.now() < pauseUntil.current) return;
+      if (modalOpen.current) return;
       if (transitionTimer.current) return;
       setActiveIndex((current) => (current + 1) % ANNOUNCEMENTS.length);
       transitionTimer.current = window.setTimeout(() => {
@@ -151,6 +157,8 @@ export const Announcements: React.FC = () => {
               return (
                 <div
                   key={announcement.id}
+                  inert={isHidden}
+                  aria-hidden={isHidden}
                   className={`absolute left-1/2 top-1/2 w-[min(320px,72vw)] px-1 transition-all duration-[1400ms] ease-in-out ${
                     isHidden ? 'pointer-events-none' : ''
                   }`}

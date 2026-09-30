@@ -23,28 +23,24 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
+    const waText = encodeURIComponent(
+      `Hola AP Education, soy ${name}. Deseo información/reserva sobre el programa de "${program}" para ${
+        age ? `edad/grado: ${age}` : 'mi hijo/a'
+      }. ${message ? `Consulta: ${message}` : ''}`
+    );
+    const waUrl = `https://wa.me/51951847956?text=${waText}`;
+
     setSubmitting(true);
     setFeedback(null);
 
-    // Simulate submission and construct WhatsApp redirection URL
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
     setTimeout(() => {
       setSubmitting(false);
       setFeedback({
         type: 'success',
         text: `¡Excelente, ${name}! Tu solicitud para "${program}" fue registrada con éxito. Un mentor de AP Education se comunicará al ${phone} en breve.`,
       });
-
-      const waText = encodeURIComponent(
-        `Hola AP Education, soy ${name}. Deseo información/reserva sobre el programa de "${program}" para ${
-          age ? `edad/grado: ${age}` : 'mi hijo/a'
-        }. ${message ? `Consulta: ${message}` : ''}`
-      );
-      const waUrl = `https://wa.me/51951847956?text=${waText}`;
-
-      // Open WhatsApp after a brief delay
-      setTimeout(() => {
-        window.open(waUrl, '_blank');
-      }, 1200);
     }, 600);
   };
 
@@ -257,6 +253,8 @@ export const ContactSection: React.FC = () => {
               {/* Feedback messages */}
               {feedback && (
                 <div
+                  role="status"
+                  aria-live="polite"
                   className={`p-4 rounded-xl text-sm font-semibold flex items-center gap-2 ${
                     feedback.type === 'success'
                       ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300'

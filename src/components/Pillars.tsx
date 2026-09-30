@@ -143,6 +143,13 @@ export const Pillars: React.FC = () => {
                       setActiveIndex(index);
                       pauseForFiveSeconds();
                     }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        setActiveIndex(index);
+                        pauseForFiveSeconds();
+                      }
+                    }}
                     role="button"
                     tabIndex={isHidden ? -1 : 0}
                     aria-current={isActive ? 'true' : undefined}

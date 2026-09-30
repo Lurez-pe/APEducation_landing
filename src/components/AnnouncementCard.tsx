@@ -108,6 +108,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
               href={announcement.cta.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(event) => event.stopPropagation()}
               className="inline-flex items-center gap-2 rounded-xl bg-[#4705ED] px-5 py-2.5 text-xs font-bold text-white shadow-lg hover:bg-[#3a04c4] hover:-translate-y-0.5 transition-all"
             >
               {announcement.cta.label}

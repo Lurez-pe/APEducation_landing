@@ -86,7 +86,7 @@ export const WhyAP: React.FC = () => {
             <div key={feature.number} className="relative lg:grid lg:grid-cols-2 lg:items-center gap-4 sm:gap-6">
               {/* Número en el centro */}
               <div className="absolute -left-6 lg:left-1/2 top-0 lg:top-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 z-10">
-<div className="w-12 h-12 rounded-full bg-gradient-to-b from-[#FFA3CE] to-[#FE007A] shadow-md flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-b from-[#FFA3CE] to-[#FE007A] shadow-md flex items-center justify-center">
                       <span className="font-heading font-extrabold text-white">{feature.number}</span>
                     </div>
               </div>

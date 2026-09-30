@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Construction } from 'lucide-react';
 import { PROGRAMS } from '../data';
-import { resolveAssetUrl } from '../components/announcementStyles';
+import { ProgramImage } from '../components/ProgramImage';
 
 interface ProgramPageProps {
   programKey: string;
@@ -45,10 +45,11 @@ export const ProgramPage: React.FC<ProgramPageProps> = ({ programKey }) => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <img
-                src={resolveAssetUrl(program.image)}
+              <ProgramImage
+                src={program.image}
                 alt={program.title}
-                className="aspect-video w-full object-cover rounded-2xl bg-gray-100 dark:bg-[#0D0C22]"
+                tone={program.tone}
+                className="rounded-2xl"
               />
               <div className="flex flex-col justify-center gap-4 text-sm text-gray-600 dark:text-gray-300">
                 <p>
