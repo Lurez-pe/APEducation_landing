@@ -108,7 +108,7 @@ export const Hero: React.FC = () => {
                     aria-hidden
                     loading={isActive ? 'eager' : 'lazy'}
                     decoding="async"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-bottom"
                   />
                 </picture>
 
