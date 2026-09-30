@@ -33,12 +33,25 @@ export interface AnnouncementCta {
 
 export interface Announcement {
   id: string;
-  type: AnnouncementType;
-  date: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  type?: AnnouncementType;
+  date?: string;
+  meta?: string;
+  image: string;
+  imageHeroDesktop?: string;
+  imageHeroMobile?: string;
+  cta?: AnnouncementCta | null;
+  featured?: boolean;
+  minimalHero?: boolean;
+}
+
+export interface ProgramInfo {
+  key: string;
   title: string;
   description: string;
-  meta: string;
   image: string;
-  cta?: AnnouncementCta;
-  featured?: boolean;
+  route: string;
+  tone: string;
 }

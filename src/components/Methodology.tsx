@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Compass, BookOpen, FlaskConical, Code2, Share2, Plus, Minus } from 'lucide-react';
 import { METHOD_PHASES } from '../data';
+import { ScrollLink } from './ScrollLink';
 
 export const Methodology: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -34,12 +35,12 @@ export const Methodology: React.FC = () => {
               Un ciclo sistemático y natural de 5 fases continuas que transforma a los alumnos de receptores pasivos a
               creadores tecnológicos activos y reflexivos.
             </p>
-            <a
-              href="#contacto"
+            <ScrollLink
+              to="#contacto"
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#FE007A] px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-[#e0006c] hover:-translate-y-0.5 transition-all"
             >
               Más Información
-            </a>
+            </ScrollLink>
           </div>
 
           {/* Right: Vertical accordion cards (2/3) */}

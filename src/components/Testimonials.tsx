@@ -11,10 +11,10 @@ export const Testimonials: React.FC = () => {
             Nuestra Comunidad
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-2 mb-4">
-            Historias de éxito de nuestra comunidad
+            Cada historia comienza con un primer paso
           </h2>
           <p className="text-gray-600 dark:text-gray-300 text-base">
-            Resultados comprobados en confianza personal, calificaciones destacadas y amor genuino por el conocimiento.
+            Detrás de cada estudiante hay una meta, un reto y muchas ganas de aprender. Conoce las historias de quienes fueron parte de AP Education y descubre hasta dónde pueden llegar.
           </p>
         </div>
 

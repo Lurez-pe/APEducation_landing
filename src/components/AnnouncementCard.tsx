@@ -59,10 +59,10 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
             <img
               src={resolveAssetUrl(announcement.image)}
               alt={`${announcement.title} — leer anuncio completo`}
-              className={`object-contain ${
+              className={`object-contain aspect-[9/16] ${
                 isVertical
-                  ? 'w-[150px] h-[188px] sm:w-[170px] sm:h-[212px]'
-                  : 'w-[150px] h-[188px] sm:w-[180px] sm:h-[225px] md:w-[195px] md:h-[244px] lg:w-[210px] lg:h-[263px]'
+                  ? 'h-[188px] sm:h-[212px]'
+                  : 'h-[188px] sm:h-[225px] md:h-[244px] lg:h-[263px]'
               }`}
             />
           </div>
@@ -80,28 +80,43 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
           isVertical ? 'order-2 w-full flex-1' : 'order-2 md:order-1 md:flex-1 lg:p-10'
         }`}
       >
-        <div className="flex flex-wrap items-center gap-2">
-          <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full ${badgeStyles[announcement.type]}`}>
-            {announcement.type}
-          </span>
-          <span className="flex items-center gap-1.5 text-[11px] font-bold text-gray-500 dark:text-gray-400">
-            <Calendar className="w-3.5 h-3.5 text-[#FE007A]" />
-            {announcement.date}
-          </span>
-        </div>
+        {(announcement.type || announcement.date) && (
+          <div className="flex flex-wrap items-center gap-2">
+            {announcement.type && (
+              <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full ${badgeStyles[announcement.type]}`}>
+                {announcement.type}
+              </span>
+            )}
+            {announcement.date && (
+              <span className="flex items-center gap-1.5 text-[11px] font-bold text-gray-500 dark:text-gray-400">
+                <Calendar className="w-3.5 h-3.5 text-[#FE007A]" />
+                {announcement.date}
+              </span>
+            )}
+          </div>
+        )}
 
-        <h3 className={`font-heading font-extrabold bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-3 leading-tight ${isVertical ? 'text-lg sm:text-2xl' : 'text-xl sm:text-3xl'}`}>
+        <h3 className={`font-heading font-extrabold bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent ${announcement.type || announcement.date ? 'mt-3' : ''} leading-tight ${isVertical ? 'text-lg sm:text-2xl' : 'text-xl sm:text-3xl'}`}>
           <span className="line-clamp-2">{announcement.title}</span>
         </h3>
+        {announcement.subtitle && (
+          <p className="font-heading font-bold text-brand-purple dark:text-brand-teal mt-1.5 leading-snug">
+            {announcement.subtitle}
+          </p>
+        )}
         <p className={`text-[9.5px] leading-snug mt-2 text-justify ${isVertical ? 'max-w-full' : 'max-w-[80%]'} text-[#1C1C42]/70 dark:text-gray-400`}>
           {announcement.description}
         </p>
 
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-          <span className={`inline-flex items-center gap-1.5 text-xs font-bold ${accentStyles[announcement.type]}`}>
-            <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-            {announcement.meta}
-          </span>
+          {announcement.meta ? (
+            <span className={`inline-flex items-center gap-1.5 text-xs font-bold ${announcement.type ? accentStyles[announcement.type] : 'text-gray-500 dark:text-gray-400'}`}>
+              <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
+              {announcement.meta}
+            </span>
+          ) : (
+            <span />
+          )}
 
           {announcement.cta && (
             <a

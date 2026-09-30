@@ -1,4 +1,43 @@
-import { Testimonial, FaqItem, MethodPhase, Announcement } from './types';
+import { Testimonial, FaqItem, MethodPhase, Announcement, ProgramInfo } from './types';
+
+export const PROGRAMS: ProgramInfo[] = [
+  {
+    key: 'elementary',
+    title: 'Elementary School',
+    description:
+      'Primaria: bases sólidas de matemática y comunicación con pensamiento lógico desde los primeros años.',
+    image: 'assets/programas/elementary.jpg',
+    route: '/programas/elementary-school',
+    tone: 'from-[#4705ED] to-[#00E19B]',
+  },
+  {
+    key: 'middle',
+    title: 'Middle School',
+    description:
+      'Secundaria: razonamiento avanzado, ciencias y metodología STEM para construir independencia intelectual.',
+    image: 'assets/programas/middle.jpg',
+    route: '/programas/middle-school',
+    tone: 'from-[#FE007A] to-[#4705ED]',
+  },
+  {
+    key: 'high',
+    title: 'High School',
+    description:
+      'Preuniversitario: preparación orientada a la excelencia, retos científicos y metas académicas claras.',
+    image: 'assets/programas/high.jpg',
+    route: '/programas/high-school',
+    tone: 'from-[#FFB600] to-[#FE007A]',
+  },
+  {
+    key: 'conversation',
+    title: 'Conversation Class',
+    description:
+      'Clases de conversación dinámicas para ganar fluidez, seguridad y naturalidad al hablar en inglés.',
+    image: 'assets/programas/conversation.jpg',
+    route: '/programas/conversation-class',
+    tone: 'from-[#00E19B] to-[#4705ED]',
+  },
+];
 
 export const METHOD_PHASES: MethodPhase[] = [
   {
@@ -117,38 +156,63 @@ export const FAQS: FaqItem[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
-    id: 'acompañar-sin-perseguir',
-    type: 'Gratuito',
-    date: 'Próximamente',
-    title: 'Taller Psicológico',
+    id: 'nasa-space-apps-2026',
+    title: 'Impulsamos el talento que transforma el futuro:',
     description:
-      'Claves para acompañar a nuestros hijos en el mundo digital.',
-    meta: 'Cupos limitados · Inscripción previa',
-    image: 'assets/anuncios/taller_interactua.jpeg',
-    cta: {
-      label: 'Inscribirme',
-      href: 'https://forms.gle/TJvkRYHLy85gNVzy7',
-    },
+      'Somos aliados del NASA Space Apps Challenge Arequipa 2026, conectando a nuestros estudiantes con una experiencia internacional de ciencia, tecnología e innovación.',
+    image: 'assets/anuncios/hero_1_thumb.webp',
+    imageHeroDesktop: 'assets/hero/hero_1.webp',
+    imageHeroMobile: 'assets/hero/hero_1_m.webp',
+    cta: null,
     featured: true,
+    minimalHero: true,
   },
   {
-    id: 'anuncio-equipo-nasa',
-    type: 'Anuncio',
-    date: 'Inscripciones cerradas',
-    title: 'Anuncio del Equipo NASA',
+    id: 'capital-semilla-mtpe',
+    title: 'GANAMOS CAPITAL SEMILLA!',
+    subtitle: 'AP Education sigue creciendo',
     description:
-      'Conoce a los participantes en los desafíos espaciales de la NASA Space Apps Challenge.',
-    meta: 'Para estudiantes de 12 años a más',
-    image: 'assets/anuncios/equipo_nasa.jpg',
+      'Fuimos reconocidos como ganadores del Capital Semilla del II Curso Virtual "Aprende a Emprender", organizado por el Ministerio de Trabajo y Promoción del Empleo.',
+    image: 'assets/anuncios/hero_2_thumb.webp',
+    imageHeroDesktop: 'assets/hero/hero_2.webp',
+    imageHeroMobile: 'assets/hero/hero_2_m.webp',
+    cta: null,
+    minimalHero: true,
   },
-{
-    id: 'convocatoria-equipo-nasa',
-    type: 'Anuncio',
-    date: 'Inscripciones abiertas',
-    title: 'Comunidad Mentoras STEM',
+  {
+    id: 'mentoras-trainee',
+    title: 'FORMAMOS A QUIENES FORMARÁN',
+    subtitle: 'Nace Mentoras Trainee',
     description:
-      'Sumamos científicas y profesionales STEAM que inspiran, acompañan y abren camino a las nuevas generaciones en ciencia y tecnología.',
-    meta: 'Voluntariado · Hora Perú',
-    image: 'assets/anuncios/mentoras_stem.jpeg',
-  }
+      'Un programa de formación en Innovación, Tecnología y Educación para jóvenes que quieren desarrollar sus habilidades como futuras mentoras STEM.',
+    image: 'assets/anuncios/hero_3_thumb.webp',
+    imageHeroDesktop: 'assets/hero/hero_3.webp',
+    imageHeroMobile: 'assets/hero/hero_3_m.webp',
+    cta: null,
+    minimalHero: true,
+  },
+  {
+    id: 'centro-psicologico-interactua',
+    title: 'Educación también es bienestar',
+    subtitle: 'AP Education × Centro Psicológico Interactúa',
+    description:
+      'Una alianza estratégica para brindar a nuestra comunidad beneficios y descuentos exclusivos en atención psicológica y talleres para estudiantes, familias, docentes y colaboradores.',
+    image: 'assets/anuncios/hero_4_thumb.webp',
+    imageHeroDesktop: 'assets/hero/hero_4.webp',
+    imageHeroMobile: 'assets/hero/hero_4_m.webp',
+    cta: null,
+    minimalHero: true,
+  },
+  {
+    id: 'embajadora-stem-women',
+    title: 'RECONOCIMIENTO QUE NOS INSPIRA',
+    subtitle: 'Nuestra fundadora es Embajadora STEM Women',
+    description:
+      'Azahalia Puyen, CEO & Founder de AP Education, fue incorporada como Embajadora de STEM Women Congress Perú. Reconocimiento que fortalece nuestro compromiso con la educación STEM, la innovación y el desarrollo del talento.',
+    image: 'assets/anuncios/hero_5_thumb.webp',
+    imageHeroDesktop: 'assets/hero/hero_5.webp',
+    imageHeroMobile: 'assets/hero/hero_5_m.webp',
+    cta: null,
+    minimalHero: true,
+  },
 ];

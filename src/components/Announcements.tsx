@@ -18,6 +18,23 @@ export const Announcements: React.FC = () => {
   const touchStart = useRef<{ x: number; y: number; time: number } | null>(null);
   const gestureLocked = useRef(false);
 
+  const pauseAutoplay = () => {
+    if (Date.now() < pauseUntil.current) return;
+    pauseUntil.current = Date.now() + PAUSE_ON_INTERACTION_MS;
+  };
+
+  const moveCarousel = (direction: number) => {
+    pauseAutoplay();
+    setActiveIndex((current) => (current + direction + ANNOUNCEMENTS.length) % ANNOUNCEMENTS.length);
+  };
+
+  const selectCarouselItem = (index: number) => {
+    pauseAutoplay();
+    setActiveIndex(index);
+  };
+
+  const closeModal = () => setActive(null);
+
   useEffect(() => {
     const interval = window.setInterval(() => {
       if (Date.now() < pauseUntil.current) return;
@@ -35,12 +52,13 @@ export const Announcements: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (!active) return;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setActive(null);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [active]);
 
   useEffect(() => {
     const element = carouselRef.current;
@@ -93,23 +111,6 @@ export const Announcements: React.FC = () => {
     };
   }, []);
 
-  const pauseAutoplay = () => {
-    if (Date.now() < pauseUntil.current) return;
-    pauseUntil.current = Date.now() + PAUSE_ON_INTERACTION_MS;
-  };
-
-  const moveCarousel = (direction: number) => {
-    pauseAutoplay();
-    setActiveIndex((current) => (current + direction + ANNOUNCEMENTS.length) % ANNOUNCEMENTS.length);
-  };
-
-  const selectCarouselItem = (index: number) => {
-    pauseAutoplay();
-    setActiveIndex(index);
-  };
-
-  const closeModal = () => setActive(null);
-
   return (
     <section id="anuncios" className="py-[1cm] bg-white dark:bg-[#151433] border-y border-gray-100 dark:border-[#232252] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,7 +134,7 @@ export const Announcements: React.FC = () => {
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
-          <div className="relative min-h-[500px] sm:min-h-[540px]">
+          <div className="relative min-h-[620px]">
             {ANNOUNCEMENTS.map((announcement, index) => {
               const rawOffset = index - activeIndex;
               const offset =
@@ -144,7 +145,7 @@ export const Announcements: React.FC = () => {
                     : rawOffset;
               const distance = Math.abs(offset);
               const isActive = offset === 0;
-              const isHidden = distance === 3;
+              const isHidden = distance > 1;
               const isLevelTwo = distance === 1;
 
               return (

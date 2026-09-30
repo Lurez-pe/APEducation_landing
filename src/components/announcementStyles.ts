@@ -16,3 +16,17 @@ export const accentStyles: Record<AnnouncementType, string> = {
   Convocatoria: 'text-[#A87A00] dark:text-[#FFB600]',
   Anuncio: 'text-[#4705ED] dark:text-[#A78BFA]',
 };
+
+export const heroBadgeTextStyles: Record<AnnouncementType, string> = {
+  Gratuito: 'text-[#00E19B]',
+  Evento: 'text-[#FE007A]',
+  Convocatoria: 'text-[#FFB600]',
+  Anuncio: 'text-[#A78BFA]',
+};
+
+export const heroBadgeDotStyles: Record<AnnouncementType, string> = {
+  Gratuito: 'bg-[#00E19B]',
+  Evento: 'bg-[#FE007A]',
+  Convocatoria: 'bg-[#FFB600]',
+  Anuncio: 'bg-[#A78BFA]',
+};

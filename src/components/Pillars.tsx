@@ -110,7 +110,7 @@ export const Pillars: React.FC = () => {
         <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
-          <div className="relative min-h-[390px] sm:min-h-[370px]">
+          <div className="relative min-h-[470px] sm:min-h-[420px]">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               const rawOffset = index - activeIndex;

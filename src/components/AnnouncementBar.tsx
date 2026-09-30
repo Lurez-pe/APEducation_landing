@@ -38,7 +38,8 @@ export const AnnouncementBar: React.FC<AnnouncementBarProps> = ({ announcement, 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-center gap-3 text-xs sm:text-sm font-semibold">
         <Megaphone className="w-4 h-4 flex-shrink-0" aria-hidden />
         <span className="truncate">
-          {announcement.title} · {announcement.date}
+          {announcement.title}
+          {announcement.date ? ` · ${announcement.date}` : ''}
         </span>
         {announcement.cta && (
           <a

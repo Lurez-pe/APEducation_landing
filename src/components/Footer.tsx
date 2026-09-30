@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageCircle, Mail, Camera, Clock } from 'lucide-react';
 import { resolveAssetUrl } from './announcementStyles';
+import { ScrollLink } from './ScrollLink';
 
 export const Footer: React.FC = () => {
   return (
@@ -75,12 +76,12 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} AP Education. Todos los derechos reservados. Fundada por Azahalia Puyen.
           </div>
           <div className="flex gap-6">
-            <a href="#que-es" className="hover:text-gray-200 transition-colors">
+            <ScrollLink to="#que-es" className="hover:text-gray-200 transition-colors">
               Términos del Servicio
-            </a>
-            <a href="#contacto" className="hover:text-gray-200 transition-colors">
+            </ScrollLink>
+            <ScrollLink to="#contacto" className="hover:text-gray-200 transition-colors">
               Política de Privacidad
-            </a>
+            </ScrollLink>
           </div>
         </div>
       </div>

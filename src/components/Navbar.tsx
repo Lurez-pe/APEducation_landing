@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { AnnouncementBar } from './AnnouncementBar';
+import { ProgramsDropdown } from './ProgramsDropdown';
+import { ScrollLink } from './ScrollLink';
 import { ANNOUNCEMENTS } from '../data';
 import { resolveAssetUrl } from './announcementStyles';
 
@@ -10,8 +13,16 @@ interface NavbarProps {
   onOpenContactModal?: () => void;
 }
 
+const navLinkClass = (scrolled: boolean) =>
+  `py-1 font-bold transition-colors whitespace-nowrap text-[11px] sm:text-sm lg:text-[15px] ${
+    scrolled
+      ? 'text-gray-600 dark:text-gray-300 hover:text-[#FE007A] dark:hover:text-[#FE007A]'
+      : 'text-white/90 hover:text-white'
+  }`;
+
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
   const featuredAnnouncement = ANNOUNCEMENTS.find((item) => item.featured);
 
   useEffect(() => {
@@ -22,13 +33,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Programas', href: '#programas' },
-    { name: 'Metodología', href: '#metodologia' },
-    { name: 'Anuncios', href: '#anuncios' },
-    { name: 'Comunidad', href: '#comunidad' },
-    { name: 'Contacto', href: '#contacto' },
-  ];
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -43,7 +53,12 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
 
       <div className="max-w-7xl mx-auto min-w-0 px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
         {/* Brand Logo */}
-        <a href="#" className="flex min-w-0 items-center group focus:outline-none order-1" id="brand-logo">
+        <Link
+          to="/"
+          onClick={handleLogoClick}
+          className="flex min-w-0 items-center group focus:outline-none order-1"
+          id="brand-logo"
+        >
           <img
             src={resolveAssetUrl(
               darkMode ? 'assets/brand/AP_Logo_H_W.png' : scrolled ? 'assets/brand/AP_Logo_H.svg' : 'assets/brand/AP_Logo_H_W.png'
@@ -51,27 +66,27 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
             alt="AP Education"
             className="h-9 sm:h-12 w-auto max-w-[150px] sm:max-w-[220px] flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
           />
-        </a>
+        </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop/Mobile Navigation */}
         <nav
           id="main-nav"
           className="order-3 lg:order-2 w-full lg:w-auto lg:flex-1 flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-5 lg:gap-x-7 xl:gap-x-9"
           aria-label="Navegación principal"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`py-1 font-bold transition-colors whitespace-nowrap text-[11px] sm:text-sm lg:text-[15px] ${
-                scrolled
-                  ? 'text-gray-600 dark:text-gray-300 hover:text-[#FE007A] dark:hover:text-[#FE007A]'
-                  : 'text-white/90 hover:text-white'
-              }`}
-            >
-              {link.name}
-            </a>
-          ))}
+          <ProgramsDropdown scrolled={scrolled} />
+          <ScrollLink to="#metodologia" className={navLinkClass(scrolled)}>
+            Metodología
+          </ScrollLink>
+          <ScrollLink to="#anuncios" className={navLinkClass(scrolled)}>
+            Anuncios
+          </ScrollLink>
+          <ScrollLink to="#comunidad" className={navLinkClass(scrolled)}>
+            Comunidad
+          </ScrollLink>
+          <ScrollLink to="#contacto" className={navLinkClass(scrolled)}>
+            Contacto
+          </ScrollLink>
         </nav>
 
         {/* Right Action Items */}
