@@ -71,7 +71,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="hero-section"
-      className="relative pt-0 pb-12 lg:pb-16 overflow-hidden"
+      className="relative pt-0 pb-0 overflow-hidden"
       onMouseEnter={pauseAutoplay}
     >
       <div className="relative bg-[#151433] dark:bg-[#151433] shadow-2xl select-none">
