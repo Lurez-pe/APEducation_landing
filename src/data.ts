@@ -224,7 +224,6 @@ export const ANNOUNCEMENTS: Announcement[] = [
       label: 'Inscribirme',
       href: 'https://forms.gle/TJvkRYHLy85gNVzy7',
     },
-    featured: true,
   },
   {
     id: 'anuncio-equipo-nasa',

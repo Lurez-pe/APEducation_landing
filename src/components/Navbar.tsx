@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { AnnouncementBar } from './AnnouncementBar';
 import { ProgramsDropdown } from './ProgramsDropdown';
 import { ScrollLink } from './ScrollLink';
-import { ANNOUNCEMENTS } from '../data';
 import { resolveAssetUrl } from './announcementStyles';
 
 interface NavbarProps {
@@ -23,7 +21,6 @@ const navLinkClass = (scrolled: boolean) =>
 export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const featuredAnnouncement = ANNOUNCEMENTS.find((item) => item.featured);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,9 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
           ? 'bg-white/95 dark:bg-[#0D0C22]/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-[#232252]'
           : 'bg-transparent border-b border-transparent'
       }`}
-    >
-      <AnnouncementBar announcement={featuredAnnouncement} scrolled={scrolled} />
-
+>
       <div className="max-w-7xl mx-auto min-w-0 px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
         {/* Brand Logo */}
         <Link
