@@ -86,7 +86,7 @@ export const ContactSection: React.FC = () => {
               </a>
 
               <a
-                href="mailto:academia.ap.education@gmail.com"
+                href="mailto:equipo@apeducationlatam.com"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#FE007A] transition-all group"
               >
                 <div className="w-12 h-12 rounded-xl bg-[#FE007A]/10 text-[#FE007A] flex items-center justify-center flex-shrink-0">
@@ -97,7 +97,7 @@ export const ContactSection: React.FC = () => {
                     Correo Electrónico Oficial
                   </div>
                   <div className="font-heading font-bold text-base text-[#1C1C42] dark:text-white group-hover:text-[#FE007A] transition-colors">
-                    academia.ap.education@gmail.com
+                    equipo@apeducationlatam.com
                   </div>
                 </div>
               </a>

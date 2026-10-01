@@ -170,7 +170,7 @@ export const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: 'capital-semilla-mtpe',
-    title: 'GANAMOS CAPITAL SEMILLA!',
+    title: '!GANAMOS CAPITAL SEMILLA!',
     subtitle: 'AP Education sigue creciendo',
     description:
       'Fuimos reconocidos como ganadores del Capital Semilla del II Curso Virtual "Aprende a Emprender", organizado por el Ministerio de Trabajo y Promoción del Empleo.',
