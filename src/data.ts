@@ -6,7 +6,7 @@ export const PROGRAMS: ProgramInfo[] = [
     title: 'Elementary School',
     description:
       'Primaria: bases sólidas de matemática y comunicación con pensamiento lógico desde los primeros años.',
-    image: 'assets/programas/elementary.jpg',
+    image: 'assets/programas/elementary.webp',
     route: '/programas/elementary-school',
     tone: 'from-[#4705ED] to-[#00E19B]',
   },
@@ -15,7 +15,7 @@ export const PROGRAMS: ProgramInfo[] = [
     title: 'Middle School',
     description:
       'Secundaria: razonamiento avanzado, ciencias y metodología STEM para construir independencia intelectual.',
-    image: 'assets/programas/middle.jpg',
+    image: 'assets/programas/middle.webp',
     route: '/programas/middle-school',
     tone: 'from-[#FE007A] to-[#4705ED]',
   },
@@ -24,7 +24,7 @@ export const PROGRAMS: ProgramInfo[] = [
     title: 'High School',
     description:
       'Preuniversitario: preparación orientada a la excelencia, retos científicos y metas académicas claras.',
-    image: 'assets/programas/high.jpg',
+    image: 'assets/programas/high.webp',
     route: '/programas/high-school',
     tone: 'from-[#FFB600] to-[#FE007A]',
   },
@@ -33,7 +33,7 @@ export const PROGRAMS: ProgramInfo[] = [
     title: 'Conversation Class',
     description:
       'Clases de conversación dinámicas para ganar fluidez, seguridad y naturalidad al hablar en inglés.',
-    image: 'assets/programas/conversation.jpg',
+    image: 'assets/programas/conversation.webp',
     route: '/programas/conversation-class',
     tone: 'from-[#00E19B] to-[#4705ED]',
   },
@@ -170,7 +170,7 @@ export const HERO_SLIDES: HeroSlide[] = [
   },
   {
     id: 'capital-semilla-mtpe',
-    title: '!GANAMOS CAPITAL SEMILLA!',
+    title: '¡GANAMOS CAPITAL SEMILLA!',
     subtitle: 'AP Education sigue creciendo',
     description:
       'Fuimos reconocidos como ganadores del Capital Semilla del II Curso Virtual "Aprende a Emprender", organizado por el Ministerio de Trabajo y Promoción del Empleo.',
