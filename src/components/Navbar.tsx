@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
         <Link
           to="/"
           onClick={handleLogoClick}
-          className="flex min-w-0 items-center group focus:outline-none order-1"
+          className="flex min-w-0 items-center group focus:outline-none order-1 -ml-4 sm:-ml-6 lg:-ml-8"
           id="brand-logo"
         >
           <img
@@ -59,7 +59,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleTheme }) => {
               darkMode ? 'assets/brand/AP_Logo_H_W.png' : scrolled ? 'assets/brand/AP_Logo_H.svg' : 'assets/brand/AP_Logo_H_W.png'
             )}
             alt="AP Education"
-            className="h-9 sm:h-12 w-auto max-w-[150px] sm:max-w-[220px] flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
+            className="h-12 sm:h-16 lg:h-20 w-auto max-w-none flex-shrink-0 object-contain group-hover:scale-105 transition-transform"
           />
         </Link>
 
