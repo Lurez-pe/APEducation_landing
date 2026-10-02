@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
     >
       <div className="relative bg-[#151433] dark:bg-[#151433] shadow-2xl select-none">
         {/* Slides */}
-        <div className="relative h-[calc(100svh+120px)] min-h-[660px] lg:h-auto lg:min-h-0 lg:aspect-[2.15/1]">
+        <div className="relative h-[100svh] sm:h-[calc(100svh+120px)] sm:min-h-[660px] lg:h-auto lg:min-h-0 lg:aspect-[2.15/1]">
           {HERO_SLIDES.map((slide, index) => {
             const isActive = index === activeIndex;
 
@@ -101,6 +101,10 @@ export const Hero: React.FC = () => {
                   <source
                     media="(min-width: 1024px)"
                     srcSet={resolveAssetUrl(slide.imageHeroDesktop)}
+                  />
+                  <source
+                    media="(max-aspect-ratio: 0.5)"
+                    srcSet={resolveAssetUrl(slide.imageHeroMobileTall)}
                   />
                   <img
                     src={resolveAssetUrl(slide.imageHeroMobile)}

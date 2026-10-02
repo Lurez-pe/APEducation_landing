@@ -1,4 +1,4 @@
-import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo } from './types';
+﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo } from './types';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -167,6 +167,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       'Somos aliados del NASA Space Apps Challenge Arequipa 2026, conectando a nuestros estudiantes con una experiencia internacional de ciencia, tecnología e innovación.',
     imageHeroDesktop: 'assets/hero/hero_1.webp',
     imageHeroMobile: 'assets/hero/hero_1_m.webp',
+    imageHeroMobileTall: 'assets/hero/hero_1_mt.webp',
   },
   {
     id: 'capital-semilla-mtpe',
@@ -176,6 +177,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       'Fuimos reconocidos como ganadores del Capital Semilla del II Curso Virtual "Aprende a Emprender", organizado por el Ministerio de Trabajo y Promoción del Empleo.',
     imageHeroDesktop: 'assets/hero/hero_2.webp',
     imageHeroMobile: 'assets/hero/hero_2_m.webp',
+    imageHeroMobileTall: 'assets/hero/hero_2_mt.webp',
   },
   {
     id: 'mentoras-trainee',
@@ -185,6 +187,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       'Un programa de formación en innovación, Tecnología y Educación para jóvenes que quieren desarrollar sus habilidades como futuras mentoras STEM.',
     imageHeroDesktop: 'assets/hero/hero_3.webp',
     imageHeroMobile: 'assets/hero/hero_3_m.webp',
+    imageHeroMobileTall: 'assets/hero/hero_3_mt.webp',
   },
   {
     id: 'centro-psicologico-interactua',
@@ -194,6 +197,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       'Una alianza estratégica para brindar a nuestra comunidad beneficios y descuentos exclusivos en atención psicológica y talleres para estudiantes, familias, docentes y colaboradores.',
     imageHeroDesktop: 'assets/hero/hero_4.webp',
     imageHeroMobile: 'assets/hero/hero_4_m.webp',
+    imageHeroMobileTall: 'assets/hero/hero_4_mt.webp',
   },
   {
     id: 'embajadora-stem-women',
@@ -203,6 +207,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       'Azahalia Puyen, CEO & Founder de AP Education, fue incorporada como Embajadora de STEM Women Congress Perú. Reconocimiento que fortalece nuestro compromiso con la educación STEM, la innovación y el desarrollo del talento.',
     imageHeroDesktop: 'assets/hero/hero_5.webp',
     imageHeroMobile: 'assets/hero/hero_5_m.webp',
+    imageHeroMobileTall: 'assets/hero/hero_5_mt.webp',
   },
 ];
 

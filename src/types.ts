@@ -51,6 +51,7 @@ export interface HeroSlide {
   description: string;
   imageHeroDesktop: string;
   imageHeroMobile: string;
+  imageHeroMobileTall: string;
 }
 
 export interface ProgramInfo {
