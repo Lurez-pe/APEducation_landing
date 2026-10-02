@@ -4,7 +4,7 @@ import { HERO_SLIDES } from '../data';
 import { HeroSlide } from '../types';
 import { resolveAssetUrl } from './announcementStyles';
 
-const FOCUS_INTERVAL_MS = 6000;
+const FOCUS_INTERVAL_MS = 3000;
 const TRANSITION_DURATION_MS = 900;
 const PAUSE_ON_INTERACTION_MS = 4000;
 
