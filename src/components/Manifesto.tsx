@@ -3,8 +3,8 @@ import React from 'react';
 export const Manifesto: React.FC = () => {
   const stats = [
     { value: '5', label: 'Países de presencia' },
-    { value: '+1000', label: 'Estudiantes' },
-    { value: '+5', label: 'Años de trayectoria' },
+    { value: '+500', label: 'Estudiantes' },
+    { value: '+3', label: 'Años de trayectoria' },
   ];
 
   return (
