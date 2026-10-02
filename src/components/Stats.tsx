@@ -3,7 +3,7 @@ import React from 'react';
 export const Stats: React.FC = () => {
   const stats = [
     {
-      value: '+3',
+      value: '12+',
       label: 'Años de Trayectoria Docente',
       color: 'text-[#FE007A]',
     },
