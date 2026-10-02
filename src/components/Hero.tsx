@@ -6,7 +6,7 @@ import { resolveAssetUrl } from './announcementStyles';
 
 const FOCUS_INTERVAL_MS = 3000;
 const TRANSITION_DURATION_MS = 900;
-const PAUSE_ON_INTERACTION_MS = 4000;
+const PAUSE_ON_INTERACTION_MS = 2000;
 
 const HERO_BACKDROP = 'absolute inset-0 bg-gradient-to-r from-[#0D0C22] via-[#0D0C22]/95 to-[#0D0C22]/85';
 const HERO_OVERLAY =
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
     >
       <div className="relative bg-[#151433] dark:bg-[#151433] shadow-2xl select-none">
         {/* Slides */}
-        <div className="relative h-[calc(100svh+170px)] min-h-[720px] lg:h-auto lg:min-h-0 lg:aspect-[2/1]">
+        <div className="relative h-[calc(100svh+120px)] min-h-[660px] lg:h-auto lg:min-h-0 lg:aspect-[2.15/1]">
           {HERO_SLIDES.map((slide, index) => {
             const isActive = index === activeIndex;
 
