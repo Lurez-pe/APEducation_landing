@@ -14,9 +14,9 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="programas/elementary-school" element={<ProgramPage programKey="elementary" />} />
-        <Route path="programas/middle-school" element={<ProgramPage programKey="middle" />} />
-        <Route path="programas/high-school" element={<ProgramPage programKey="high" />} />
+        <Route path="programas/ciclo-escolar" element={<ProgramPage programKey="ciclo-escolar" />} />
+        <Route path="programas/clases-one-to-one" element={<ProgramPage programKey="clases-one-to-one" />} />
+        <Route path="programas/ciclo-de-verano-2027" element={<ProgramPage programKey="ciclo-de-verano-2027" />} />
         <Route path="programas/conversation-class" element={<ProgramPage programKey="conversation" />} />
         <Route path="*" element={<Home />} />
       </Route>

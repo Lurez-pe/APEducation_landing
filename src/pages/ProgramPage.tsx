@@ -25,11 +25,14 @@ export const ProgramPage: React.FC<ProgramPageProps> = ({ programKey }) => {
         <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#151433] border border-gray-200 dark:border-[#232252] text-xs font-bold uppercase tracking-wider text-[#FE007A] mb-4 shadow-sm">
           Programa
         </span>
-        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl text-[#1C1C42] dark:text-white leading-[1.1] tracking-tight mb-6">
+        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent leading-[1.1] tracking-tight mb-6">
           {program.title}
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed mb-12">
+        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
           {program.description}
+        </p>
+        <p className="font-heading font-bold text-lg sm:text-xl text-[#FE007A] max-w-2xl mt-4 mb-12">
+          {program.tagline}
         </p>
 
         <div className="rounded-3xl overflow-hidden border border-gray-200 dark:border-[#232252] shadow-xl">

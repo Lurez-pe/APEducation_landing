@@ -58,6 +58,7 @@ export interface ProgramInfo {
   key: string;
   title: string;
   description: string;
+  tagline: string;
   image: string;
   route: string;
   tone: string;

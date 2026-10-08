@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { PROGRAMS } from '../data';
 
 const FacebookIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -29,7 +30,7 @@ export const ContactSection: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [program, setProgram] = useState('Matemática Comprensiva');
+  const [program, setProgram] = useState(PROGRAMS[0].title);
   const [age, setAge] = useState('');
   const [message, setMessage] = useState('');
 
@@ -251,10 +252,11 @@ export const ContactSection: React.FC = () => {
                     onChange={(e) => setProgram(e.target.value)}
                     className="w-full px-4 py-3 rounded-xl bg-[#FAFAFE] dark:bg-[#0D0C22] border border-gray-200 dark:border-[#232252] text-[#1C1C42] dark:text-white text-sm focus:outline-none focus:border-[#FE007A] transition-colors"
                   >
-                    <option value="Matemática Comprensiva">Matemática Comprensiva</option>
-                    <option value="Comunicación Efectiva & Oratoria">Comunicación Efectiva & Oratoria</option>
-                    <option value="Diseño y Modelado 3D">Diseño y Modelado 3D</option>
-                    <option value="Programación & Código Creativo">Programación & Código Creativo</option>
+                    {PROGRAMS.map((p) => (
+                      <option key={p.key} value={p.title}>
+                        {p.title}
+                      </option>
+                    ))}
                     <option value="AP LAB: Experiencia STEAM Total">AP LAB: Experiencia STEAM Total</option>
                     <option value="Orientación Pedagógica General">Orientación Pedagógica General</option>
                   </select>

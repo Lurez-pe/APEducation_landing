@@ -113,15 +113,18 @@ export const ProgramsDropdown: React.FC<ProgramsDropdownProps> = ({ scrolled }) 
                   key={program.key}
                   to={program.route}
                   role="menuitem"
-                  className="group flex flex-col items-stretch overflow-hidden rounded-xl border border-gray-100 dark:border-[#232252] bg-white dark:bg-[#151433] hover:-translate-y-1 hover:shadow-lg hover:border-[#FE007A]/50 transition-all duration-200 text-left"
+                  className="card-gradient-border group flex flex-col items-stretch overflow-hidden rounded-xl border border-gray-100 dark:border-[#232252] bg-white dark:bg-[#151433] hover:-translate-y-1 hover:shadow-lg hover:border-[#FE007A]/50 transition-all duration-200 text-left"
                 >
                   <ProgramImage src={program.image} alt={program.title} tone={program.tone} />
                   <div className="flex flex-col gap-1.5 p-3 sm:p-4">
-                    <span className="font-heading font-bold text-xs sm:text-base text-[#1C1C42] dark:text-white leading-tight group-hover:text-[#FE007A] transition-colors">
+                    <span className="font-heading font-bold text-xs sm:text-base text-[#4705ED] dark:text-[#00E19B] leading-tight group-hover:text-[#FE007A] transition-colors">
                       {program.title}
                     </span>
                     <span className="text-[11px] sm:text-sm leading-snug text-gray-500 dark:text-gray-400 line-clamp-3">
                       {program.description}
+                    </span>
+                    <span className="text-[11px] sm:text-xs font-bold italic leading-snug text-[#FE007A]">
+                      {program.tagline}
                     </span>
                   </div>
                 </Link>

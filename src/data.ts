@@ -2,37 +2,41 @@
 
 export const PROGRAMS: ProgramInfo[] = [
   {
-    key: 'elementary',
-    title: 'Elementary School',
+    key: 'ciclo-escolar',
+    title: 'Ciclo Escolar',
     description:
-      'Primaria: bases sólidas de matemática y comunicación con pensamiento lógico desde los primeros años.',
+      'Un programa de acompañamiento académico durante el año escolar para fortalecer conocimientos, desarrollar habilidades y aprender de manera activa a través de Matemática, Comunicación y experiencias STEAM.',
+    tagline: 'Aprender durante todo el año.',
     image: 'assets/programas/elementary.webp',
-    route: '/programas/elementary-school',
+    route: '/programas/ciclo-escolar',
     tone: 'from-[#4705ED] to-[#00E19B]',
   },
   {
-    key: 'middle',
-    title: 'Middle School',
+    key: 'clases-one-to-one',
+    title: 'Clases One to One',
     description:
-      'Secundaria: razonamiento avanzado, ciencias y metodología STEM para construir independencia intelectual.',
+      'Clases personalizadas diseñadas según las necesidades, objetivos y ritmo de cada estudiante. Un acompañamiento cercano para reforzar, nivelar o profundizar sus aprendizajes.',
+    tagline: 'Un aprendizaje a su medida.',
     image: 'assets/programas/middle.webp',
-    route: '/programas/middle-school',
+    route: '/programas/clases-one-to-one',
     tone: 'from-[#FE007A] to-[#4705ED]',
   },
   {
-    key: 'high',
-    title: 'High School',
+    key: 'ciclo-de-verano-2027',
+    title: 'Ciclo de Verano 2027',
     description:
-      'Preuniversitario: preparación orientada a la excelencia, retos científicos y metas académicas claras.',
+      'Una experiencia para aprender, crear y divertirse durante las vacaciones. Actividades dinámicas que combinan aprendizaje, creatividad, tecnología y retos para comenzar el nuevo año con nuevas habilidades.',
+    tagline: 'Vacaciones que también inspiran.',
     image: 'assets/programas/high.webp',
-    route: '/programas/high-school',
+    route: '/programas/ciclo-de-verano-2027',
     tone: 'from-[#FFB600] to-[#FE007A]',
   },
   {
     key: 'conversation',
     title: 'Conversation Class',
     description:
-      'Clases de conversación dinámicas para ganar fluidez, seguridad y naturalidad al hablar en inglés.',
+      'Un espacio para practicar inglés de forma dinámica y natural, desarrollando fluidez, confianza y habilidades de comunicación a través de conversaciones, juegos y actividades.',
+    tagline: 'Speak. Connect. Have fun.',
     image: 'assets/programas/conversation.webp',
     route: '/programas/conversation-class',
     tone: 'from-[#00E19B] to-[#4705ED]',

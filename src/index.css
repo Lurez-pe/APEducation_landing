@@ -75,6 +75,53 @@ section[id] {
   animation: floatSubtle 4s ease-in-out 2s infinite;
 }
 
+/* Angulo animable del gradiente conico. Sin @property la animacion no puede
+   interpolar una custom property y el anillo quedaria estatico. */
+@property --ang {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spinGrad {
+  to {
+    --ang: 360deg;
+  }
+}
+
+/* Anillo de 1px con gradiente de marca alrededor de la tarjeta. La mascara
+   recorta el centro dejando solo el borde; z-index 1 para que pinte por
+   encima de la foto, que llega hasta el borde. */
+.card-gradient-border {
+  position: relative;
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from var(--ang), #4705ED, #FE007A, #00E19B, #FFB600, #4705ED);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-gradient-border:hover::before {
+  opacity: 1;
+  animation: spinGrad 4s linear infinite;
+}
+
 .neu-surface {
   background: #FAFAFE;
   box-shadow: 8px 8px 18px rgba(28, 28, 66, 0.06), -6px -6px 14px rgba(255, 255, 255, 0.9);
@@ -146,5 +193,9 @@ section[id] {
 @media (prefers-reduced-motion: reduce) {
   .app-shell {
     transition: none;
+  }
+
+  .card-gradient-border:hover::before {
+    animation: none;
   }
 }
