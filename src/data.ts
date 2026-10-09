@@ -7,7 +7,7 @@ export const PROGRAMS: ProgramInfo[] = [
     description:
       'Un programa de acompañamiento académico durante el año escolar para fortalecer conocimientos, desarrollar habilidades y aprender de manera activa a través de Matemática, Comunicación y experiencias STEAM.',
     tagline: 'Aprender durante todo el año.',
-    image: 'assets/programas/elementary.webp',
+    image: 'assets/programas/ciclo_escolar.webp',
     route: '/programas/ciclo-escolar',
     tone: 'from-[#4705ED] to-[#00E19B]',
   },
@@ -17,7 +17,7 @@ export const PROGRAMS: ProgramInfo[] = [
     description:
       'Clases personalizadas diseñadas según las necesidades, objetivos y ritmo de cada estudiante. Un acompañamiento cercano para reforzar, nivelar o profundizar sus aprendizajes.',
     tagline: 'Un aprendizaje a su medida.',
-    image: 'assets/programas/middle.webp',
+    image: 'assets/programas/one2one.webp',
     route: '/programas/clases-one-to-one',
     tone: 'from-[#FE007A] to-[#4705ED]',
   },
@@ -27,7 +27,7 @@ export const PROGRAMS: ProgramInfo[] = [
     description:
       'Una experiencia para aprender, crear y divertirse durante las vacaciones. Actividades dinámicas que combinan aprendizaje, creatividad, tecnología y retos para comenzar el nuevo año con nuevas habilidades.',
     tagline: 'Vacaciones que también inspiran.',
-    image: 'assets/programas/high.webp',
+    image: 'assets/programas/ciclo_verano.webp',
     route: '/programas/ciclo-de-verano-2027',
     tone: 'from-[#FFB600] to-[#FE007A]',
   },

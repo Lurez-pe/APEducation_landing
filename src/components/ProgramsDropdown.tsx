@@ -102,12 +102,20 @@ export const ProgramsDropdown: React.FC<ProgramsDropdownProps> = ({ scrolled }) 
           }}
           className="w-[min(100vw-2rem,600px)] mx-auto pt-3 lg:absolute lg:top-full lg:left-3 lg:right-3 lg:mx-auto lg:w-auto lg:max-w-[1700px] z-50"
         >
-          <div
-            role="menu"
-            aria-label="Programas"
-            className="rounded-2xl bg-white dark:bg-[#151433] border border-gray-100 dark:border-[#232252] shadow-2xl p-3 sm:p-4"
-          >
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <div className="rounded-2xl bg-white dark:bg-[#151433] border border-gray-100 dark:border-[#232252] shadow-2xl p-3 sm:p-4">
+            <div className="pb-1.5 mb-3 border-b border-gray-100 dark:border-[#232252]">
+              <div className="max-w-3xl">
+                <p className="inline-block font-heading font-bold uppercase tracking-widest text-lg sm:text-2xl leading-tight bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent">
+                  Encuentra la experiencia ideal para ti
+                </p>
+                <p className="mt-1 text-[11px] sm:text-xs leading-snug text-gray-500 dark:text-gray-400">
+                  Elige cómo quieres aprender. Nosotros nos encargamos de convertirlo en una experiencia que motive,
+                  rete y acompañe.
+                </p>
+              </div>
+            </div>
+
+            <div role="menu" aria-label="Programas" className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {PROGRAMS.map((program) => (
                 <Link
                   key={program.key}
