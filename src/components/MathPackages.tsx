@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { MATH_PACKAGES } from '../data';
 import { whatsappUrl, SOCIAL_URLS } from '../site';
+import { resolveAssetUrl } from './announcementStyles';
 import { FacebookIcon, TikTokIcon, InstagramIcon, LinkedInIcon } from './ContactSection';
 
 const SOCIAL_LINKS = [
@@ -42,9 +43,12 @@ export const MathPackages: React.FC = () => {
               <span className="absolute inset-0 flex items-center justify-center select-none font-heading font-extrabold text-7xl text-white/25">
                 {pack.symbol}
               </span>
-              <span className="absolute bottom-3 right-3 rounded-md bg-black/15 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-white/80">
-                Imagen del paquete
-              </span>
+              <img
+                src={resolveAssetUrl(pack.image)}
+                alt={`Paquete ${pack.title}`}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
             </div>
 
             <div className="flex flex-1 flex-col p-5 sm:p-6">

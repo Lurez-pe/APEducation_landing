@@ -58,6 +58,7 @@ export const MATH_PACKAGES: MathPackage[] = [
     ],
     tone: 'from-[#4705ED] to-[#00E19B]',
     symbol: '√x',
+    image: 'assets/programas/refuerzo_escolar.png',
   },
   {
     id: 'adelanto-intermedio',
@@ -72,6 +73,7 @@ export const MATH_PACKAGES: MathPackage[] = [
     ],
     tone: 'from-[#FE007A] to-[#4705ED]',
     symbol: 'x²',
+    image: 'assets/programas/adelanto_intermedio.png',
   },
   {
     id: 'adelanto-avanzado',
@@ -86,6 +88,7 @@ export const MATH_PACKAGES: MathPackage[] = [
     ],
     tone: 'from-[#FFB600] to-[#FE007A]',
     symbol: '∑',
+    image: 'assets/programas/adelanto_avanzado.png',
   },
 ];
 

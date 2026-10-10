@@ -72,4 +72,5 @@ export interface MathPackage {
   benefits: string[];
   tone: string;
   symbol: string;
+  image: string;
 }
