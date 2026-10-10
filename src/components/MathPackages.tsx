@@ -1,18 +1,14 @@
 import React from 'react';
 import { CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { MATH_PACKAGES } from '../data';
+import { whatsappUrl, SOCIAL_URLS } from '../site';
 import { FacebookIcon, TikTokIcon, InstagramIcon, LinkedInIcon } from './ContactSection';
 
-const WHATSAPP_NUMBER = '51951847956';
-
-const whatsappLink = (message: string) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
 const SOCIAL_LINKS = [
-  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=100064046923630', Icon: FacebookIcon },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@academiaapeducation', Icon: TikTokIcon },
-  { label: 'Instagram', href: 'https://www.instagram.com/academiaapeducation/', Icon: InstagramIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/academia-ap-education', Icon: LinkedInIcon },
+  { label: 'Facebook', href: SOCIAL_URLS.facebook, Icon: FacebookIcon },
+  { label: 'TikTok', href: SOCIAL_URLS.tiktok, Icon: TikTokIcon },
+  { label: 'Instagram', href: SOCIAL_URLS.instagram, Icon: InstagramIcon },
+  { label: 'LinkedIn', href: SOCIAL_URLS.linkedin, Icon: LinkedInIcon },
 ];
 
 const ctaClass =
@@ -71,7 +67,7 @@ export const MathPackages: React.FC = () => {
               </ul>
 
               <a
-                href={whatsappLink(
+href={whatsappUrl(
                   `Hola AP Education, deseo información sobre el paquete de Matemática "${pack.title}".`
                 )}
                 target="_blank"
@@ -94,7 +90,7 @@ export const MathPackages: React.FC = () => {
           En AP Education te ayudamos a encontrar la propuesta de Matemática que mejor se adapte a sus necesidades.
         </p>
         <a
-          href={whatsappLink(
+          href={whatsappUrl(
             'Hola AP Education, necesito ayuda para elegir el paquete de Matemática ideal para mi estudiante.'
           )}
           target="_blank"

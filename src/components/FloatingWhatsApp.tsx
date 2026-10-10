@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { resolveAssetUrl } from './announcementStyles';
+import { whatsappUrl, WHATSAPP_DISPLAY } from '../site';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [hovered, setHovered] = useState(false);
@@ -17,12 +18,12 @@ export const FloatingWhatsApp: React.FC = () => {
           hovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'
         }`}
       >
-        ¿Conversamos? +51 951 847 956 🚀
+        ¿Conversamos? {WHATSAPP_DISPLAY} 🚀
       </div>
 
       <a
         id="floating-whatsapp-btn"
-        href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20los%20cursos%20STEAM"
+        href={whatsappUrl('Hola AP Education, quisiera recibir información sobre los cursos STEAM')}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contactar por WhatsApp a AP Education"

@@ -173,7 +173,6 @@ export const Announcements: React.FC = () => {
                     announcement={announcement}
                     onOpenImage={setActive}
                     onSelect={isActive ? undefined : () => selectCarouselItem(index)}
-                    variant="vertical"
                   />
                 </div>
               );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { PROGRAMS } from '../data';
+import { whatsappUrl, SOCIAL_URLS } from '../site';
 
 export const FacebookIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className}>
@@ -48,23 +49,20 @@ export const ContactSection: React.FC = () => {
       return;
     }
 
-    const waText = encodeURIComponent(
-      `Hola AP Education, soy ${name}. Deseo información/reserva sobre el programa de "${program}" para ${
-        age ? `edad/grado: ${age}` : 'mi hijo/a'
-      }. ${message ? `Consulta: ${message}` : ''}`
-    );
-    const waUrl = `https://wa.me/51951847956?text=${waText}`;
+    const waText = `Hola AP Education, soy ${name}. Deseo información/reserva sobre el programa de "${program}" para ${
+      age ? `edad/grado: ${age}` : 'mi hijo/a'
+    }. ${message ? `Consulta: ${message}` : ''}`;
 
     setSubmitting(true);
     setFeedback(null);
 
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    window.open(whatsappUrl(waText), '_blank', 'noopener,noreferrer');
 
     setTimeout(() => {
       setSubmitting(false);
       setFeedback({
         type: 'success',
-        text: `¡Excelente, ${name}! Tu solicitud para "${program}" fue registrada con éxito. Un mentor de AP Education se comunicará al ${phone} en breve.`,
+        text: `¡Excelente, ${name}! Se abrió WhatsApp con tu solicitud para "${program}" ya redactada. Confirma el envío y un mentor de AP Education te responderá en breve.`,
       });
     }, 600);
   };
@@ -92,7 +90,7 @@ export const ContactSection: React.FC = () => {
 
             <div className="space-y-4">
               <a
-                href="https://www.facebook.com/profile.php?id=100064046923630"
+                href={SOCIAL_URLS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#1877F2] transition-all group"
@@ -111,7 +109,7 @@ export const ContactSection: React.FC = () => {
               </a>
 
               <a
-                href="https://www.tiktok.com/@academiaapeducation"
+                href={SOCIAL_URLS.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#FE2C55] transition-all group"
@@ -130,7 +128,7 @@ export const ContactSection: React.FC = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/academiaapeducation/"
+                href={SOCIAL_URLS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#4705ED] transition-all group"
@@ -149,7 +147,7 @@ export const ContactSection: React.FC = () => {
               </a>
 
               <a
-                href="https://www.linkedin.com/company/academia-ap-education"
+                href={SOCIAL_URLS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-[#151433] border border-gray-200/80 dark:border-[#232252] shadow-sm hover:border-[#0A66C2] transition-all group"

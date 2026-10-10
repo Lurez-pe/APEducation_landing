@@ -2,6 +2,7 @@ import React from 'react';
 import { MessageCircle, Mail, Camera, Clock } from 'lucide-react';
 import { resolveAssetUrl } from './announcementStyles';
 import { ScrollLink } from './ScrollLink';
+import { whatsappUrl, WHATSAPP_DISPLAY, CONTACT_EMAIL, SOCIAL_URLS } from '../site';
 
 export const Footer: React.FC = () => {
   return (
@@ -37,24 +38,24 @@ export const Footer: React.FC = () => {
               <li className="flex items-center gap-3">
                 <MessageCircle className="w-4 h-4 text-[#00E19B] flex-shrink-0" />
                 <a
-                  href="https://wa.me/51951847956"
+                  href={whatsappUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  +51 951 847 956
+                  {WHATSAPP_DISPLAY}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#FE007A] flex-shrink-0" />
-                <a href="mailto:equipo@apeducationlatam.com" className="hover:text-white transition-colors">
-                  equipo@apeducationlatam.com
+                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors">
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Camera className="w-4 h-4 text-[#FFB600] flex-shrink-0" />
                 <a
-                  href="https://www.instagram.com/academiaapeducation/"
+                  href={SOCIAL_URLS.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"

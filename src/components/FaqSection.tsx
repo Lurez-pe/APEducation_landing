@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, MessageCircle, HelpCircle } from 'lucide-react';
 import { FAQS } from '../data';
+import { whatsappUrl, WHATSAPP_DISPLAY } from '../site';
 
 export const FaqSection: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>('faq-1');
@@ -77,13 +78,13 @@ export const FaqSection: React.FC = () => {
             </p>
           </div>
           <a
-            href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20tengo%20una%20consulta%20espec%C3%ADfica"
+            href={whatsappUrl('Hola AP Education, tengo una consulta específica')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#4705ED] hover:bg-[#4705ED]/90 text-white text-xs font-bold transition-all whitespace-nowrap shadow-sm"
           >
             <MessageCircle className="w-4 h-4 text-[#00E19B]" />
-            <span>Consultar al +51 951 847 956</span>
+            <span>Consultar al {WHATSAPP_DISPLAY}</span>
           </a>
         </div>
       </div>

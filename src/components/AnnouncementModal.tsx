@@ -25,6 +25,9 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
     >
       <div
         id="announcement-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="announcement-modal-title"
         className="relative flex max-h-[calc(100dvh-0.75rem)] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xl dark:border-[#232252] dark:bg-[#151433] sm:max-h-[calc(100dvh-1rem)]"
         onClick={(event) => event.stopPropagation()}
       >
@@ -33,6 +36,7 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
           <button
             id="close-announcement-modal-btn"
             onClick={onClose}
+            autoFocus
             className="absolute top-2.5 right-2.5 w-7 h-7 rounded-full bg-[#1C1C42]/10 hover:bg-[#1C1C42]/20 text-[#1C1C42] dark:text-white flex items-center justify-center transition-colors cursor-pointer"
             aria-label="Cerrar anuncio"
           >
@@ -41,7 +45,7 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
           <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-2 py-0.5 rounded-full ${badgeStyles[announcement.type]}`}>
             {announcement.type}
           </span>
-          <h2 className="font-heading font-extrabold text-sm sm:text-base pr-10 text-[#1C1C42] dark:text-white mt-1">
+          <h2 id="announcement-modal-title" className="font-heading font-extrabold text-sm sm:text-base pr-10 text-[#1C1C42] dark:text-white mt-1">
             {announcement.title}
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-[11px] font-semibold mt-0.5 flex items-center gap-1.5">

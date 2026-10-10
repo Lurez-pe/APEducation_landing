@@ -42,39 +42,6 @@ section[id] {
   font-family: var(--font-nunito);
 }
 
-/* Glow effects (softened, no neon glow) */
-.glow-magenta {
-  box-shadow: 0 6px 20px -8px rgba(28, 28, 66, 0.14);
-}
-.glow-purple {
-  box-shadow: 0 6px 20px -8px rgba(28, 28, 66, 0.14);
-}
-.glow-teal {
-  box-shadow: 0 6px 20px -8px rgba(28, 28, 66, 0.12);
-}
-
-@keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes floatSubtle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-spin-slow {
-  animation: spinSlow 35s linear infinite;
-}
-
-.animate-float {
-  animation: floatSubtle 4s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: floatSubtle 4s ease-in-out 2s infinite;
-}
-
 /* Angulo animable del gradiente conico. Sin @property la animacion no puede
    interpolar una custom property y el anillo quedaria estatico. */
 @property --ang {
@@ -120,34 +87,6 @@ section[id] {
 .card-gradient-border:hover::before {
   opacity: 1;
   animation: spinGrad 4s linear infinite;
-}
-
-.neu-surface {
-  background: #FAFAFE;
-  box-shadow: 8px 8px 18px rgba(28, 28, 66, 0.06), -6px -6px 14px rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-}
-
-.dark .neu-surface {
-  background: #151433;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -6px -6px 14px rgba(35, 34, 82, 0.28);
-  border-color: rgba(35, 34, 82, 0.8);
-}
-
-.neu-control {
-  box-shadow: 4px 4px 8px rgba(28, 28, 66, 0.05), -4px -4px 8px rgba(255, 255, 255, 0.85);
-}
-
-.dark .neu-control {
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.16), -3px -3px 7px rgba(35, 34, 82, 0.22);
-}
-
-.neu-inset {
-  box-shadow: inset 3px 3px 6px rgba(28, 28, 66, 0.07), inset -3px -3px 6px rgba(255, 255, 255, 0.85);
-}
-
-.dark .neu-inset {
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2), inset -3px -3px 6px rgba(35, 34, 82, 0.2);
 }
 
 .app-shell {

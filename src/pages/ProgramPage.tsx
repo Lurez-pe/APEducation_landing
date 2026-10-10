@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Construction } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { PROGRAMS } from '../data';
-import { ProgramImage } from '../components/ProgramImage';
 import { MathPackages } from '../components/MathPackages';
 
 interface ProgramPageProps {
@@ -35,47 +34,6 @@ export const ProgramPage: React.FC<ProgramPageProps> = ({ programKey }) => {
         <p className="font-heading font-bold text-lg sm:text-xl text-[#FE007A] max-w-2xl mt-4 mb-12">
           {program.tagline}
         </p>
-
-        <div className="rounded-3xl overflow-hidden border border-gray-200 dark:border-[#232252] shadow-xl">
-          <div className={`bg-gradient-to-r ${program.tone} h-2`} />
-          <div className="p-8 sm:p-10 bg-white dark:bg-[#151433]">
-            <div className="flex items-start gap-4 mb-8">
-              <Construction className="w-6 h-6 text-[#FFB600] flex-shrink-0 mt-0.5" />
-              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                Esta página está en construcción. Aquí encontrarás toda la información sobre el programa{' '}
-                <strong>{program.title}</strong>: plan de estudios, horarios, docentes e inscripciones. Mientras tanto,
-                escríbenos por WhatsApp para más detalles.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <ProgramImage
-                src={program.image}
-                alt={program.title}
-                tone={program.tone}
-                className="rounded-2xl"
-              />
-              <div className="flex flex-col justify-center gap-4 text-sm text-gray-600 dark:text-gray-300">
-                <p>
-                  <strong className="text-[#1C1C42] dark:text-white">Metodología:</strong> STEM con acompañamiento
-                  personalizado.
-                </p>
-                <p>
-                  <strong className="text-[#1C1C42] dark:text-white">Modalidad:</strong> 100% en vivo, grupos reducidos
-                  de 6 a 8 estudiantes.
-                </p>
-                <a
-                  href="https://wa.me/51951847956?text=Hola%20AP%20Education,%20deseo%20informaci%C3%B3n%20sobre%20el%20programa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-2 px-6 py-3 rounded-xl bg-[#FE007A] text-white font-bold text-sm hover:bg-[#e0006c] hover:scale-105 active:scale-95 transition-all shadow-md"
-                >
-                  Consultar por WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {program.key === 'ciclo-escolar' && <MathPackages />}
       </div>

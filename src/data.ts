@@ -1,4 +1,5 @@
 ﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo, MathPackage } from './types';
+import { WHATSAPP_DISPLAY } from './site';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -199,7 +200,7 @@ export const FAQS: FaqItem[] = [
     id: 'faq-5',
     question: '¿Cómo es el proceso de inscripción y cuáles son los métodos de pago?',
     category: 'Inscripción',
-    answer: 'El proceso es muy ágil: completas el formulario de contacto o nos escribes directamente por WhatsApp al +51 951 847 956. Coordinamos una breve sesión de evaluación diagnóstica de intereses sin costo, confirmas tu horario y aseguras la vacante. Aceptamos transferencias bancarias, Yape/Plin (Perú) y medios digitales seguros.'
+    answer: `El proceso es muy ágil: completas el formulario de contacto o nos escribes directamente por WhatsApp al ${WHATSAPP_DISPLAY}. Coordinamos una breve sesión de evaluación diagnóstica de intereses sin costo, confirmas tu horario y aseguras la vacante. Aceptamos transferencias bancarias, Yape/Plin (Perú) y medios digitales seguros.`
   }
 ];
 
