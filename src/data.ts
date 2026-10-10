@@ -1,4 +1,4 @@
-﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo } from './types';
+﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo, MathPackage } from './types';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -40,6 +40,51 @@ export const PROGRAMS: ProgramInfo[] = [
     image: 'assets/programas/conversation.webp',
     route: '/programas/conversation-class',
     tone: 'from-[#00E19B] to-[#4705ED]',
+  },
+];
+
+export const MATH_PACKAGES: MathPackage[] = [
+  {
+    id: 'refuerzo-escolar',
+    title: 'Refuerzo Escolar',
+    audience: 'Estudiantes de primaria y secundaria',
+    description:
+      'Ideal para estudiantes que necesitan reforzar sus bases en Matemática y desarrollar una mejor comprensión de los temas escolares.',
+    benefits: [
+      'Fortalecer sus conocimientos.',
+      'Mejorar su comprensión de los temas escolares.',
+      'Ganar confianza en su aprendizaje.',
+    ],
+    tone: 'from-[#4705ED] to-[#00E19B]',
+    symbol: '√x',
+  },
+  {
+    id: 'adelanto-intermedio',
+    title: 'Adelanto Intermedio Escolar',
+    audience: 'Estudiantes de secundaria',
+    description:
+      'Diseñado para estudiantes que desean adelantarse a los temas del colegio y seguir avanzando en Matemática desde casa.',
+    benefits: [
+      'Explorar nuevos contenidos.',
+      'Adelantarse a los temas del colegio.',
+      'Prepararse para nuevos desafíos escolares.',
+    ],
+    tone: 'from-[#FE007A] to-[#4705ED]',
+    symbol: 'x²',
+  },
+  {
+    id: 'adelanto-avanzado',
+    title: 'Adelanto Avanzado Escolar',
+    audience: 'Estudiantes que buscan un nivel preuniversitario',
+    description:
+      'Una propuesta de mayor nivel para estudiantes que quieren acercarse a las exigencias de la preparación preuniversitaria y ampliar sus conocimientos en Matemática.',
+    benefits: [
+      'Desarrollar un nivel superior en Matemática.',
+      'Prepararse para la etapa preuniversitaria.',
+      'Ampliar sus posibilidades académicas.',
+    ],
+    tone: 'from-[#FFB600] to-[#FE007A]',
+    symbol: '∑',
   },
 ];
 

@@ -63,3 +63,13 @@ export interface ProgramInfo {
   route: string;
   tone: string;
 }
+
+export interface MathPackage {
+  id: string;
+  title: string;
+  audience: string;
+  description: string;
+  benefits: string[];
+  tone: string;
+  symbol: string;
+}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Construction } from 'lucide-react';
 import { PROGRAMS } from '../data';
 import { ProgramImage } from '../components/ProgramImage';
+import { MathPackages } from '../components/MathPackages';
 
 interface ProgramPageProps {
   programKey: string;
@@ -75,6 +76,8 @@ export const ProgramPage: React.FC<ProgramPageProps> = ({ programKey }) => {
             </div>
           </div>
         </div>
+
+        {program.key === 'ciclo-escolar' && <MathPackages />}
       </div>
     </div>
   );
