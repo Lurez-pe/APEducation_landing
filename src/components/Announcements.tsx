@@ -5,7 +5,7 @@ import { Announcement } from '../types';
 import { AnnouncementCard } from './AnnouncementCard';
 import { AnnouncementModal } from './AnnouncementModal';
 
-const FOCUS_INTERVAL_MS = 720;
+const FOCUS_INTERVAL_MS = 2500;
 const TRANSITION_DURATION_MS = 1400;
 const PAUSE_ON_INTERACTION_MS = 3800;
 
