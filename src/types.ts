@@ -38,7 +38,8 @@ export interface Announcement {
   title: string;
   description: string;
   meta: string;
-  image: string;
+  image?: string;
+  video?: string;
   cta?: AnnouncementCta | null;
   featured?: boolean;
 }

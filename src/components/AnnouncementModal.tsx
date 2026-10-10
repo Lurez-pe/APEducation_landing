@@ -57,17 +57,30 @@ export const AnnouncementModal: React.FC<AnnouncementModalProps> = ({ announceme
         {/* Modal Image — large centered 4:5 frame, image always complete */}
         <div className="min-h-0 flex-1 flex items-center justify-center overflow-hidden bg-[#FAFAFE] dark:bg-[#0D0C22] p-2 sm:p-3">
           <div className="relative aspect-[4/5] h-[calc(100dvh-12rem)] max-h-full max-w-full w-auto rounded-xl border border-gray-100 dark:border-[#232252] shadow-lg overflow-hidden">
-            <img
-              src={resolveAssetUrl(announcement.image)}
-              alt={`${announcement.title} — anuncio completo`}
-              className="absolute inset-0 w-full h-full object-contain"
-            />
+            {announcement.video ? (
+              <video
+                src={resolveAssetUrl(announcement.video)}
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label={announcement.title}
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            ) : announcement.image ? (
+              <img
+                src={resolveAssetUrl(announcement.image)}
+                alt={`${announcement.title} — anuncio completo`}
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            ) : null}
           </div>
         </div>
 
         {/* Modal Footer — compact to avoid scrolling */}
         <div className="flex-shrink-0 flex flex-col gap-2 border-t border-gray-100 bg-gray-50 p-2 sm:p-3 dark:border-[#232252] dark:bg-[#0D0C22]">
-          <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed text-justify line-clamp-1">
+          <p className="text-xs text-gray-600 dark:text-gray-300 leading-relaxed text-justify whitespace-pre-line">
             {announcement.description}
           </p>
           <div className="flex flex-wrap items-center justify-between gap-2">

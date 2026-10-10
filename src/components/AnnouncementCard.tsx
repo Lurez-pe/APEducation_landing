@@ -48,11 +48,24 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
           className="absolute inset-0 flex items-center justify-center group cursor-zoom-in focus:outline-none"
         >
           <div className="rotate-[12deg] rounded-md border-[6px] border-white dark:border-[#232252] shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105 group-focus-visible:scale-105">
-            <img
-              src={resolveAssetUrl(announcement.image)}
-              alt={`${announcement.title} — leer anuncio completo`}
-              className="object-contain w-[150px] h-[188px] sm:w-[170px] sm:h-[212px]"
-            />
+            {announcement.video ? (
+              <video
+                src={resolveAssetUrl(announcement.video)}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={announcement.title}
+                className="object-cover w-[150px] h-[188px] sm:w-[170px] sm:h-[212px]"
+              />
+            ) : announcement.image ? (
+              <img
+                src={resolveAssetUrl(announcement.image)}
+                alt={`${announcement.title} — leer anuncio completo`}
+                className="object-contain w-[150px] h-[188px] sm:w-[170px] sm:h-[212px]"
+              />
+            ) : null}
           </div>
 
           <span className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 rounded-full bg-[#1C1C42]/90 text-white text-[11px] font-bold px-3 py-1.5 shadow-lg pointer-events-none">
@@ -77,7 +90,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
         <h3 className="font-heading font-extrabold text-lg sm:text-2xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-3 leading-tight">
           <span className="line-clamp-2">{announcement.title}</span>
         </h3>
-        <p className="text-[9.5px] leading-snug mt-2 text-justify max-w-full text-[#1C1C42]/70 dark:text-gray-400">
+        <p className="text-[9.5px] leading-snug mt-2 text-justify max-w-full line-clamp-3 text-[#1C1C42]/70 dark:text-gray-400">
           {announcement.description}
         </p>
 

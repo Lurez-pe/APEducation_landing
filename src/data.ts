@@ -1,5 +1,5 @@
 ﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo, MathPackage } from './types';
-import { WHATSAPP_DISPLAY } from './site';
+import { WHATSAPP_DISPLAY, whatsappUrl } from './site';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -271,16 +271,20 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const ANNOUNCEMENTS: Announcement[] = [
   {
     id: 'acompañar-sin-perseguir',
-    type: 'Gratuito',
-    date: 'Próximamente',
-    title: 'Taller Psicológico',
+    type: 'Evento',
+    date: 'Sábado 17 de octubre · 10 a. m.',
+    title: 'Crea tu Calabaza 3D en Tinkercad',
     description:
-      'Claves para acompañar a nuestros hijos en el mundo digital.',
-    meta: 'Cupos limitados · Inscripción previa',
-    image: 'assets/anuncios/taller_interactua.jpeg',
+      '¿Te gustaría crear tu propia calabaza de Halloween en 3D?\n\n' +
+      '🚀 Este sábado 17 de octubre a las 10 de la mañana.\n\n' +
+      '📲 ¡Inscríbete y crea algo increíble!',
+    meta: 'Solo 5 soles · Cupos limitados',
+    video: 'assets/anuncios/halloween_tinker.mp4',
     cta: {
       label: 'Inscribirme',
-      href: 'https://forms.gle/TJvkRYHLy85gNVzy7',
+      href: whatsappUrl(
+        'Hola AP Education, quiero inscribirme al taller "Crea tu Calabaza 3D en Tinkercad" (sábado 17 de octubre, 10 a. m.).'
+      ),
     },
   },
   {
