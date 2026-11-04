@@ -76,7 +76,7 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
       </div>
 
       {/* Content Zone */}
-      <div className="relative z-10 flex flex-col p-5 sm:p-6 order-2 w-full flex-1 min-h-0">
+      <div className="relative z-10 flex flex-col justify-center p-5 sm:p-6 order-2 w-full flex-1">
         <div className="flex flex-wrap items-center gap-2">
           <span className={`inline-flex items-center text-[10px] font-extrabold uppercase tracking-wide px-3 py-1 rounded-full ${badgeStyles[announcement.type]}`}>
             {announcement.type}
@@ -90,14 +90,11 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
         <h3 className="font-heading font-extrabold text-lg sm:text-2xl bg-gradient-to-r from-[#4705ED] via-[#FE007A] to-[#00E19B] bg-clip-text text-transparent mt-3 leading-tight">
           <span className="line-clamp-2">{announcement.title}</span>
         </h3>
+        <p className="text-[9.5px] leading-snug mt-2 text-justify max-w-full line-clamp-3 text-[#1C1C42]/70 dark:text-gray-400">
+          {announcement.description}
+        </p>
 
-        <div className="mt-2 flex-1 min-h-0 overflow-y-auto overflow-x-hidden pr-1 custom-scrollbar">
-          <p className="text-[9.5px] leading-snug text-justify whitespace-pre-line text-[#1C1C42]/70 dark:text-gray-400">
-            {announcement.description}
-          </p>
-        </div>
-
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 pt-2">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
           <span className={`inline-flex items-center gap-1.5 text-xs font-bold ${accentStyles[announcement.type]}`}>
             <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
             {announcement.meta}
@@ -109,10 +106,10 @@ export const AnnouncementCard: React.FC<AnnouncementCardProps> = ({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(event) => event.stopPropagation()}
-              className="inline-flex items-center gap-2 rounded-xl bg-[#4705ED] px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-[#3a04c4] hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#4705ED] px-5 py-2.5 text-xs font-bold text-white shadow-lg hover:bg-[#3a04c4] hover:-translate-y-0.5 transition-all"
             >
               {announcement.cta.label}
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           )}
         </div>
