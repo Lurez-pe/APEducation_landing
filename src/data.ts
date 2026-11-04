@@ -1,5 +1,5 @@
 ﻿import { Testimonial, FaqItem, MethodPhase, Announcement, HeroSlide, ProgramInfo, MathPackage } from './types';
-import { WHATSAPP_DISPLAY, whatsappUrl } from './site';
+import { WHATSAPP_DISPLAY } from './site';
 
 export const PROGRAMS: ProgramInfo[] = [
   {
@@ -271,20 +271,27 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const ANNOUNCEMENTS: Announcement[] = [
   {
     id: 'acompañar-sin-perseguir',
-    type: 'Evento',
-    date: 'Sábado 17 de octubre · 10 a. m.',
-    title: 'Crea tu Calabaza 3D en Tinkercad',
+    type: 'Gratuito',
+    date: '16 de noviembre · 7:00 p. m.',
+    title: 'Aprendizaje Basado en Proyectos (ABP): Del problema al prototipo',
     description:
-      '¿Te gustaría crear tu propia calabaza de Halloween en 3D?\n\n' +
-      '🚀 Este sábado 17 de octubre a las 10 de la mañana.\n\n' +
-      '📲 ¡Inscríbete y crea algo increíble!',
-    meta: 'Solo 5 soles · Cupos limitados',
-    video: 'assets/anuncios/halloween_tinker.mp4',
+      '🚀 ¡CAPACITACIÓN GRATUITA | AP EDUCATION!\n\n' +
+      '💡 ¿Cómo transformar un problema en una solución innovadora?\n\n' +
+      'Te invitamos a nuestra capacitación:\n\n' +
+      '🎯 APRENDIZAJE BASADO EN PROYECTOS (ABP): DEL PROBLEMA AL PROTOTIPO.\n\n' +
+      '🎙️ Ponente: Ylich Villagra\n' +
+      '📅 16 de noviembre\n' +
+      '🕖 7:00 p. m.\n' +
+      '💻 Modalidad virtual\n' +
+      '🎟️ ¡Ingreso libre!\n\n' +
+      '📝 Inscríbete aquí:\n' +
+      'https://forms.gle/HuZKn4Xu7GusgS6E6\n\n' +
+      '¡Aprendamos, creemos e innovemos juntos! 🚀',
+    meta: 'Modalidad virtual · Ingreso libre',
+    image: 'assets/anuncios/ABP_Nov_AP.png',
     cta: {
       label: 'Inscribirme',
-      href: whatsappUrl(
-        'Hola AP Education, quiero inscribirme al taller "Crea tu Calabaza 3D en Tinkercad" (sábado 17 de octubre, 10 a. m.).'
-      ),
+      href: 'https://forms.gle/HuZKn4Xu7GusgS6E6',
     },
   },
   {
